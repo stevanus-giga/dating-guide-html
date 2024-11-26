@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dating Guide Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="app" data-v-app="">
+      <header
+        class="navbar position-fixed bg-white flex-md-nowrap p-0 border-bottom w-100 z-2"
+      >
+        <a href="/admin" class="router-link-active navbar-brand"
+          ><img src="/assets/images/logo.png" class="ms-2" alt="Logo"
+        /></a>
+        <ul class="navbar-nav flex-row d-lg-none">
+          <li class="nav-item text-nowrap">
+            <button
+              class="nav-link px-3"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#sidebarMenu"
+              aria-controls="sidebarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="gigacon gigacon-hamburger"></i>
+            </button>
+          </li>
+        </ul>
+      </header>
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="h-100 sidebar border border-right col-lg-2 p-0 bg-body-tertiary"
+          >
+            <div
+              class="offcanvas-lg offcanvas-end bg-body-tertiary overflow-y-auto h-100"
+              tabindex="-1"
+              id="sidebarMenu"
+              aria-labelledby="sidebarMenuLabel"
+            >
+              <div class="offcanvas-header">
+                <img src="/assets/images/logo.png" alt="Logo" /><button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  data-bs-target="#sidebarMenu"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div
+                class="mt-lg-5 offcanvas-body d-lg-flex flex-column p-0 pt-lg-3"
+              >
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#dashboard-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-heart-double me-2"></i
+                        >Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="dashboard-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a
+                            href="/admin/events"
+                            class="router-link-active router-link-exact-active nav-link link-dark"
+                            aria-current="page"
+                            >Edit Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Events
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >3</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/add-event-for-member"
+                            class="nav-link link-dark"
+                            >Add Event for Member</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/sponsored-ads"
+                            class="nav-link link-dark"
+                            >Sponsored Ads</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/homepage-events"
+                            class="nav-link link-dark"
+                            >Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/dg-homepage-events"
+                            class="nav-link link-dark"
+                            >DG Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/logins"
+                            class="nav-link link-dark"
+                            >Logins</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#travel-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-star-double me-2"></i>Travel
+                        Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="travel-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/travel" class="nav-link link-dark"
+                            >Travel Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/sponsored-ads.html"
+                            class="nav-link link-dark"
+                            >Travel SponsoredAds</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/pending-events"
+                            class="nav-link link-dark"
+                            >Travel Events Pending
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#clubs-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-wink-mutual me-2"></i
+                        >Clubs</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="clubs-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/clubs" class="nav-link link-dark"
+                            >Clubs</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/clubs/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Clubs
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#mail-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-envelope me-2"></i>Mail</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="mail-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/mail" class="nav-link link-dark"
+                            >Pending Mail</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <hr class="my-3" />
+                <ul class="nav flex-column mt-auto">
+                  <li class="nav-item">
+                    <a
+                      href="/"
+                      class="nav-link link-dark d-flex align-items-center gap-2"
+                      ><i class="gigacon gigacon-log-out"></i> Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <main class="col-lg-9 ms-sm-auto col-lg-10 px-md-4 my-5">
+            <div class="mx-auto container mx-auto py-3 mt-4">
+              <h1 class="h2 font-bold mb-3">Clubs</h1>
+              <div class="w-lg-50 mx-auto bg-gray p-4 mb-4">
+                <h2>Find Club</h2>
+                <p>
+                  Enter first few letters for your search in either one or both
+                  fields
+                </p>
+                <div class="mb-3">
+                  <!--v-if--><input
+                    type="text"
+                    id="search"
+                    class="form-control"
+                    placeholder="Club Name"
+                  /><!--v-if-->
+                </div>
+                <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                <div class="d-flex gap-2">
+                  <div class="w-100">
+                    <!--v-if--><input
+                      type="text"
+                      id="clubid"
+                      class="form-control"
+                      placeholder="Club ID"
+                    /><!--v-if-->
+                  </div>
+                  <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><button
+                    type="submit"
+                    class="btn btn-primary px-3 px-lg-5"
+                  >
+                    Search
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex gap-2 flex-wrap align-items-center">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-outline-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Actions
+                  </button>
+                  <ul
+                    class="dropdown-menu dropdown-menu-start"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <li><a class="dropdown-item" href="#">Pause</a></li>
+                    <li><a class="dropdown-item" href="#">Unpause</a></li>
+                    <li><a class="dropdown-item" href="#">View</a></li>
+                    <li><a class="dropdown-item" href="#">Delete</a></li>
+                  </ul>
+                </div>
+                <a href="/admin/clubs/add" class="btn btn-primary"
+                  ><i class="gigacon gigacon-plus-sign me-2"></i>Add club
+                </a>
+              </div>
+              <div class="datatable">
+                <div
+                  id="DataTables_Table_1_wrapper"
+                  class="dt-container dt-bootstrap5 dt-empty-footer"
+                >
+                  <div class="row mt-2 justify-content-between">
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-start col-md-auto me-auto"
+                    >
+                      <div class="dt-length">
+                        <select
+                          name="DataTables_Table_1_length"
+                          aria-controls="DataTables_Table_1"
+                          class="form-select form-select-sm"
+                          id="dt-length-1"
+                        >
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                          <option value="200">200</option></select
+                        ><label for="dt-length-1"> entries per page</label>
+                      </div>
+                    </div>
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-end col-md-auto ms-auto"
+                    >
+                      <div class="dt-search">
+                        <label for="dt-search-1">Search:</label
+                        ><input
+                          type="search"
+                          class="form-control form-control-sm"
+                          id="dt-search-1"
+                          placeholder=""
+                          aria-controls="DataTables_Table_1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2 justify-content-between dt-layout-table">
+                    <div
+                      class="d-md-flex justify-content-between align-items-center col-12 dt-layout-full col-md"
+                    >
+                      <table
+                        class="table table-hover table-striped dataTable"
+                        width="100%"
+                        style="width: 100%"
+                        id="DataTables_Table_1"
+                        aria-describedby="DataTables_Table_1_info"
+                      >
+                        <colgroup>
+                          <col data-dt-column="0" style="width: 179.1px" />
+                          <col data-dt-column="1" style="width: 776.1px" />
+                          <col data-dt-column="2" style="width: 238.8px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th
+                              width="15%"
+                              data-dt-column="0"
+                              class="text-start dt-type-numeric dt-orderable-asc dt-orderable-desc dt-ordering-asc"
+                              rowspan="1"
+                              colspan="1"
+                              aria-sort="ascending"
+                              aria-label="Club ID: Activate to invert sorting"
+                              tabindex="0"
+                            >
+                              <span class="dt-column-title" role="button"
+                                >Club ID</span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                            <th
+                              data-dt-column="1"
+                              rowspan="1"
+                              colspan="1"
+                              class="dt-orderable-asc dt-orderable-desc"
+                              aria-label="Club Name: Activate to sort"
+                              tabindex="0"
+                            >
+                              <span class="dt-column-title" role="button"
+                                >Club Name</span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                            <th
+                              width="20%"
+                              data-dt-column="2"
+                              rowspan="1"
+                              colspan="1"
+                              class="dt-orderable-asc dt-orderable-desc"
+                              aria-label="Status: Activate to sort"
+                              tabindex="0"
+                            >
+                              <span class="dt-column-title" role="button"
+                                >Status</span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input type="checkbox" class="me-3" value="1" />1
+                            </td>
+                            <td>Electric Storm FC</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="1"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input type="checkbox" class="me-3" value="2" />2
+                            </td>
+                            <td>Thunderbolt United</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="2"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input type="checkbox" class="me-3" value="3" />3
+                            </td>
+                            <td>Starlight Strikers</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="3"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input type="checkbox" class="me-3" value="4" />4
+                            </td>
+                            <td>Midnight Mavericks</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="4"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input type="checkbox" class="me-3" value="5" />5
+                            </td>
+                            <td>Rise Up Rangers</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="5"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input type="checkbox" class="me-3" value="6" />6
+                            </td>
+                            <td>Velocity FC</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="6"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input type="checkbox" class="me-3" value="7" />7
+                            </td>
+                            <td>Fusion United</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="7"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input type="checkbox" class="me-3" value="8" />8
+                            </td>
+                            <td>Apex Predators</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="8"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input type="checkbox" class="me-3" value="9" />9
+                            </td>
+                            <td>Storm Chasers</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="9"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="10"
+                              />10
+                            </td>
+                            <td>Tornado Titans</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="10"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="11"
+                              />11
+                            </td>
+                            <td>Comet Crushers</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="11"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="12"
+                              />12
+                            </td>
+                            <td>Aurora FC</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="12"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="13"
+                              />13
+                            </td>
+                            <td>Bolt Brigade</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="13"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="14"
+                              />14
+                            </td>
+                            <td>Pulse Pioneers</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="14"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="15"
+                              />15
+                            </td>
+                            <td>Flare Fusion</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="15"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="16"
+                              />16
+                            </td>
+                            <td>Spark Squad</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="16"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="17"
+                              />17
+                            </td>
+                            <td>Thunderbolts</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="17"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="18"
+                              />18
+                            </td>
+                            <td>Lightning Legion</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="18"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="19"
+                              />19
+                            </td>
+                            <td>Nova Nomads</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="19"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="20"
+                              />20
+                            </td>
+                            <td>Zephyr FC</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="20"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="121"
+                              />121
+                            </td>
+                            <td>Aurora FC</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="121"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="122"
+                              />122
+                            </td>
+                            <td>Solar Flare</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="122"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="123"
+                              />123
+                            </td>
+                            <td>Lunar Legion</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="123"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="text-start dt-type-numeric sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="220"
+                              />220
+                            </td>
+                            <td>Galactic Squad</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="/admin/clubs/edit"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="220"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="row mt-2 justify-content-between">
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-start col-md-auto me-auto"
+                    >
+                      <div
+                        class="dt-info"
+                        aria-live="polite"
+                        id="DataTables_Table_1_info"
+                        role="status"
+                      >
+                        Showing 1 to 24 of 24 entries
+                      </div>
+                    </div>
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-end col-md-auto ms-auto"
+                    >
+                      <div class="dt-paging">
+                        <nav aria-label="pagination">
+                          <ul class="pagination">
+                            <li class="dt-paging-button page-item disabled">
+                              <button
+                                class="page-link first"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_1"
+                                aria-disabled="true"
+                                aria-label="First"
+                                data-dt-idx="first"
+                                tabindex="-1"
+                              >
+                                «
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item disabled">
+                              <button
+                                class="page-link previous"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_1"
+                                aria-disabled="true"
+                                aria-label="Previous"
+                                data-dt-idx="previous"
+                                tabindex="-1"
+                              >
+                                ‹
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item active">
+                              <button
+                                class="page-link"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_1"
+                                aria-current="page"
+                                data-dt-idx="0"
+                              >
+                                1
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item disabled">
+                              <button
+                                class="page-link next"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_1"
+                                aria-disabled="true"
+                                aria-label="Next"
+                                data-dt-idx="next"
+                                tabindex="-1"
+                              >
+                                ›
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item disabled">
+                              <button
+                                class="page-link last"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_1"
+                                aria-disabled="true"
+                                aria-label="Last"
+                                data-dt-idx="last"
+                                tabindex="-1"
+                              >
+                                »
+                              </button>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

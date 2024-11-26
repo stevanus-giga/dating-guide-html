@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dating Guide Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="app" data-v-app="">
+      <header
+        class="navbar position-fixed bg-white flex-md-nowrap p-0 border-bottom w-100 z-2"
+      >
+        <a href="/admin" class="router-link-active navbar-brand"
+          ><img src="/assets/images/logo.png" class="ms-2" alt="Logo"
+        /></a>
+        <ul class="navbar-nav flex-row d-lg-none">
+          <li class="nav-item text-nowrap">
+            <button
+              class="nav-link px-3"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#sidebarMenu"
+              aria-controls="sidebarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="gigacon gigacon-hamburger"></i>
+            </button>
+          </li>
+        </ul>
+      </header>
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="h-100 sidebar border border-right col-lg-2 p-0 bg-body-tertiary"
+          >
+            <div
+              class="offcanvas-lg offcanvas-end bg-body-tertiary overflow-y-auto h-100"
+              tabindex="-1"
+              id="sidebarMenu"
+              aria-labelledby="sidebarMenuLabel"
+            >
+              <div class="offcanvas-header">
+                <img src="/assets/images/logo.png" alt="Logo" /><button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  data-bs-target="#sidebarMenu"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div
+                class="mt-lg-5 offcanvas-body d-lg-flex flex-column p-0 pt-lg-3"
+              >
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#dashboard-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-heart-double me-2"></i
+                        >Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="dashboard-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a
+                            href="/admin/events"
+                            class="router-link-active router-link-exact-active nav-link link-dark"
+                            aria-current="page"
+                            >Edit Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Events
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >3</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/add-event-for-member"
+                            class="nav-link link-dark"
+                            >Add Event for Member</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/sponsored-ads"
+                            class="nav-link link-dark"
+                            >Sponsored Ads</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/homepage-events"
+                            class="nav-link link-dark"
+                            >Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/dg-homepage-events"
+                            class="nav-link link-dark"
+                            >DG Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/logins"
+                            class="nav-link link-dark"
+                            >Logins</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#travel-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-star-double me-2"></i>Travel
+                        Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="travel-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/travel" class="nav-link link-dark"
+                            >Travel Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/sponsored-ads.html"
+                            class="nav-link link-dark"
+                            >Travel SponsoredAds</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/pending-events"
+                            class="nav-link link-dark"
+                            >Travel Events Pending
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#clubs-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-wink-mutual me-2"></i
+                        >Clubs</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="clubs-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/clubs" class="nav-link link-dark"
+                            >Clubs</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/clubs/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Clubs
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#mail-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-envelope me-2"></i>Mail</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="mail-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/mail" class="nav-link link-dark"
+                            >Pending Mail</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <hr class="my-3" />
+                <ul class="nav flex-column mt-auto">
+                  <li class="nav-item">
+                    <a
+                      href="/"
+                      class="nav-link link-dark d-flex align-items-center gap-2"
+                      ><i class="gigacon gigacon-log-out"></i> Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <main class="col-lg-9 ms-sm-auto col-lg-10 px-md-4 my-5">
+            <div class="container mx-auto py-3 mt-4">
+              <div class="row g-5">
+                <div class="col-12 col-lg-9">
+                  <form action="" method="post" class="">
+                    <div class="mb-3">
+                      <h1 class="mb-0 fw-bold h2">Submit an Event</h1>
+                      <p class="my-2">
+                        Event for:
+                        <span class="d-block fst-italic fw-bold"
+                          >john@example.com</span
+                        >
+                      </p>
+                    </div>
+                    <div class="mb-3">
+                      <div class="mb-2">
+                        <h2 class="fw-bold h4">Event Listing type</h2>
+                      </div>
+                      <div class="bg-gray p-4">
+                        <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                        <div class="">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              id="event-1"
+                              value="1"
+                            /><label
+                              class="form-check-label small"
+                              for="event-1"
+                              >Create a full listing so that your event can
+                              potentially be featured and you can add both a
+                              website and ticketing link.</label
+                            >
+                          </div>
+                        </div>
+                        <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                        <div class="">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              id="event-2"
+                              value="2"
+                            /><label
+                              class="form-check-label small"
+                              for="event-2"
+                              >Create a short listing which links directly to
+                              your website.</label
+                            >
+                          </div>
+                        </div>
+                        <!--v-if-->
+                      </div>
+                    </div>
+                    <h2 class="h4 fw-bold mb-3">
+                      Event Listing &amp; Full Event Details
+                    </h2>
+                    <!--v-if-->
+                    <hr />
+                    <h3 class="h5 fw-bold mb-2">
+                      Please enter your event details below:
+                    </h3>
+                    <div class="mb-3">
+                      <label for="eventName" class="form-label small fw-medium"
+                        >Event Name*</label
+                      ><input
+                        type="text"
+                        id="eventName"
+                        class="form-control"
+                        placeholder="Event name"
+                        required=""
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <label for="eventdesc" class="form-label small fw-medium"
+                        >Short Description of Event*</label
+                      ><textarea
+                        rows="3"
+                        id="eventdesc"
+                        required=""
+                        class="form-control"
+                      ></textarea>
+                      <p class="form-text fst-italic">
+                        Maximum 3 lines, no emoji
+                      </p>
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <label for="clubs" class="form-label fw-medium"
+                        >Club</label
+                      >
+                      <div class="ajax-select position-relative">
+                        <input
+                          type="text"
+                          id="clubs"
+                          class="form-control"
+                        /><!--v-if-->
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="mb-2">
+                        <h2 class="fw-bold h4">Venue Location*</h2>
+                      </div>
+                      <div class="bg-gray p-3">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <!--v-if--><!--v-if--><!--v-if-->
+                            <div class="mb-3">
+                              <label
+                                for="states"
+                                class="block mb-2 small fw-medium text-gray-900"
+                                >State*</label
+                              ><!--v-if--><select
+                                id="states"
+                                required=""
+                                class="form-select"
+                              >
+                                <option value="New South Wales">NSW</option>
+                                <option value="Victoria">VIC</option>
+                                <option value="South Australia">SA</option>
+                                <option value="Northern Territory">NT</option>
+                                <option value="Queensland">QLD</option>
+                                <option value="Australian Capital Territory">
+                                  ACT
+                                </option>
+                                <option value="Western Australia">WA</option>
+                                <option value="Tasmania">TAS</option>
+                              </select>
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if-->
+                          </div>
+                          <div class="col-lg-6">
+                            <label for="suburbs" class="form-label fw-medium"
+                              >City/Town/Suburb*</label
+                            >
+                            <div class="ajax-select position-relative">
+                              <input
+                                type="text"
+                                id="suburbs"
+                                placeholder="City/Town/Suburb"
+                                class="form-control"
+                                required=""
+                              /><!--v-if-->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="mb-2">
+                        <h2 class="fw-bold h4">Date &amp; Time of Event*</h2>
+                      </div>
+                      <div class="bg-gray p-3">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <span
+                              class="d-block mb-2 small fw-medium text-gray-900"
+                              >Date*</span
+                            >
+                            <div class="d-flex flex-wrap gap-1">
+                              <!--v-if--><!--v-if--><!--v-if-->
+                              <div class="mb-3">
+                                <!--v-if--><!--v-if--><select
+                                  id="day"
+                                  required=""
+                                  class="form-select"
+                                >
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  <option value="10">10</option>
+                                  <option value="11">11</option>
+                                  <option value="12">12</option>
+                                  <option value="13">13</option>
+                                  <option value="14">14</option>
+                                  <option value="15">15</option>
+                                  <option value="16">16</option>
+                                  <option value="17">17</option>
+                                  <option value="18">18</option>
+                                  <option value="19">19</option>
+                                  <option value="20">20</option>
+                                  <option value="21">21</option>
+                                  <option value="22">22</option>
+                                  <option value="23">23</option>
+                                  <option value="24">24</option>
+                                  <option value="25">25</option>
+                                  <option selected="" value="26">26</option>
+                                  <option value="27">27</option>
+                                  <option value="28">28</option>
+                                  <option value="29">29</option>
+                                  <option value="30">30</option>
+                                  <option value="31">31</option>
+                                </select>
+                              </div>
+                              <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="mb-3">
+                                <!--v-if--><!--v-if--><select
+                                  id="month"
+                                  required=""
+                                  class="form-select"
+                                >
+                                  <option value="January">January</option>
+                                  <option value="February">February</option>
+                                  <option value="March">March</option>
+                                  <option value="April">April</option>
+                                  <option value="May">May</option>
+                                  <option value="June">June</option>
+                                  <option value="July">July</option>
+                                  <option value="August">August</option>
+                                  <option value="September">September</option>
+                                  <option value="October">October</option>
+                                  <option selected="" value="November">
+                                    November
+                                  </option>
+                                  <option value="December">December</option>
+                                </select>
+                              </div>
+                              <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="mb-3">
+                                <!--v-if--><!--v-if--><select
+                                  id="year"
+                                  required=""
+                                  class="form-select"
+                                >
+                                  <option selected="" value="2024">2024</option>
+                                  <option value="2025">2025</option>
+                                  <option value="2026">2026</option>
+                                  <option value="2027">2027</option>
+                                  <option value="2028">2028</option>
+                                  <option value="2029">2029</option>
+                                </select>
+                              </div>
+                              <!--v-if--><!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                          <div class="col-8 col-lg-6">
+                            <!--v-if--><!--v-if--><!--v-if-->
+                            <div class="w-100">
+                              <label
+                                for="time"
+                                class="block mb-2 small fw-medium text-gray-900"
+                                >Start Time*</label
+                              ><!--v-if--><select
+                                id="time"
+                                required=""
+                                class="form-select"
+                              >
+                                <option value="12:00 AM">12:00 AM</option>
+                                <option value="12:30 AM">12:30 AM</option>
+                                <option value="1:00 AM">1:00 AM</option>
+                                <option value="1:30 AM">1:30 AM</option>
+                                <option value="2:00 AM">2:00 AM</option>
+                                <option value="2:30 AM">2:30 AM</option>
+                                <option value="3:00 AM">3:00 AM</option>
+                                <option value="3:30 AM">3:30 AM</option>
+                                <option value="4:00 AM">4:00 AM</option>
+                                <option value="4:30 AM">4:30 AM</option>
+                                <option value="5:00 AM">5:00 AM</option>
+                                <option value="5:30 AM">5:30 AM</option>
+                                <option value="6:00 AM">6:00 AM</option>
+                                <option value="6:30 AM">6:30 AM</option>
+                                <option value="7:00 AM">7:00 AM</option>
+                                <option value="7:30 AM">7:30 AM</option>
+                                <option value="8:00 AM">8:00 AM</option>
+                                <option value="8:30 AM">8:30 AM</option>
+                                <option value="9:00 AM">9:00 AM</option>
+                                <option value="9:30 AM">9:30 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="10:30 AM">10:30 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="11:30 AM">11:30 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="12:30 PM">12:30 PM</option>
+                                <option value="1:00 PM">1:00 PM</option>
+                                <option value="1:30 PM">1:30 PM</option>
+                                <option value="2:00 PM">2:00 PM</option>
+                                <option value="2:30 PM">2:30 PM</option>
+                                <option value="3:00 PM">3:00 PM</option>
+                                <option value="3:30 PM">3:30 PM</option>
+                                <option value="4:00 PM">4:00 PM</option>
+                                <option value="4:30 PM">4:30 PM</option>
+                                <option value="5:00 PM">5:00 PM</option>
+                                <option value="5:30 PM">5:30 PM</option>
+                                <option value="6:00 PM">6:00 PM</option>
+                                <option value="6:30 PM">6:30 PM</option>
+                                <option value="7:00 PM">7:00 PM</option>
+                                <option value="7:30 PM">7:30 PM</option>
+                                <option value="8:00 PM">8:00 PM</option>
+                                <option value="8:30 PM">8:30 PM</option>
+                                <option value="9:00 PM">9:00 PM</option>
+                                <option value="9:30 PM">9:30 PM</option>
+                                <option value="10:00 PM">10:00 PM</option>
+                                <option value="10:30 PM">10:30 PM</option>
+                                <option value="11:00 PM">11:00 PM</option>
+                                <option value="11:30 PM">11:30 PM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                              </select>
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="website" class="form-label small fw-medium"
+                        >Website URL</label
+                      ><input
+                        type="text"
+                        id="website"
+                        class="form-control"
+                        placeholder="https://"
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <label
+                        for="event"
+                        class="block mb-2 small fw-medium text-gray-900"
+                        >Event Type*</label
+                      ><!--v-if--><select
+                        id="event"
+                        required=""
+                        class="form-select"
+                      >
+                        <option value="Speed Dating">Speed Dating</option>
+                        <option value="Singles Events">Singles Events</option>
+                        <option value="Social Activities">
+                          Social Activities
+                        </option>
+                        <option value="Adult Events">Adult Events</option>
+                        <option value="Swingers Parties">
+                          Swingers Parties
+                        </option>
+                        <option value="Gay Men's Events">
+                          Gay Men's Events
+                        </option>
+                        <option value="Lesbian Events">Lesbian Events</option>
+                        <option value="BDSM Kink Events">
+                          BDSM Kink Events
+                        </option>
+                        <option value="Pubs, Nightclubs">
+                          Pubs, Nightclubs
+                        </option>
+                        <option value="Adult Events Women">
+                          Adult Events Women
+                        </option>
+                        <option value="Gay &amp; Lesbian Events">
+                          Gay &amp; Lesbian Events
+                        </option>
+                      </select>
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <div class="row">
+                        <div class="col">
+                          <span class="d-block mb-2 fw-medium"
+                            >Suitable age range for this event*</span
+                          >
+                          <div class="d-flex gap-3 align-items-center">
+                            <!--v-if--><!--v-if--><!--v-if-->
+                            <div class="mb-3">
+                              <!--v-if--><!--v-if--><select
+                                required=""
+                                class="form-select"
+                              >
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                                <option value="60">60</option>
+                                <option value="61">61</option>
+                                <option value="62">62</option>
+                                <option value="63">63</option>
+                                <option value="64">64</option>
+                                <option value="65">65</option>
+                                <option value="66">66</option>
+                                <option value="67">67</option>
+                                <option value="68">68</option>
+                                <option value="69">69</option>
+                                <option value="70">70</option>
+                                <option value="71">71</option>
+                                <option value="72">72</option>
+                                <option value="73">73</option>
+                                <option value="74">74</option>
+                                <option value="75">75</option>
+                                <option value="76">76</option>
+                                <option value="77">77</option>
+                                <option value="78">78</option>
+                                <option value="79">79</option>
+                                <option value="80">80</option>
+                                <option value="81">81</option>
+                                <option value="82">82</option>
+                                <option value="83">83</option>
+                                <option value="84">84</option>
+                                <option value="85">85</option>
+                                <option value="86">86</option>
+                                <option value="87">87</option>
+                                <option value="88">88</option>
+                                <option value="89">89</option>
+                                <option value="90">90</option>
+                                <option value="91">91</option>
+                                <option value="92">92</option>
+                                <option value="93">93</option>
+                                <option value="94">94</option>
+                                <option value="95">95</option>
+                                <option value="96">96</option>
+                                <option value="97">97</option>
+                                <option value="98">98</option>
+                                <option value="99">99</option>
+                                <option value="100">100</option>
+                              </select>
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><span class="mb-3"
+                              >To</span
+                            ><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="mb-3">
+                              <!--v-if--><!--v-if--><select
+                                required=""
+                                class="form-select"
+                              >
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                                <option value="37">37</option>
+                                <option value="38">38</option>
+                                <option value="39">39</option>
+                                <option value="40">40</option>
+                                <option value="41">41</option>
+                                <option value="42">42</option>
+                                <option value="43">43</option>
+                                <option value="44">44</option>
+                                <option value="45">45</option>
+                                <option value="46">46</option>
+                                <option value="47">47</option>
+                                <option value="48">48</option>
+                                <option value="49">49</option>
+                                <option value="50">50</option>
+                                <option value="51">51</option>
+                                <option value="52">52</option>
+                                <option value="53">53</option>
+                                <option value="54">54</option>
+                                <option value="55">55</option>
+                                <option value="56">56</option>
+                                <option value="57">57</option>
+                                <option value="58">58</option>
+                                <option value="59">59</option>
+                                <option value="60">60</option>
+                                <option value="61">61</option>
+                                <option value="62">62</option>
+                                <option value="63">63</option>
+                                <option value="64">64</option>
+                                <option value="65">65</option>
+                                <option value="66">66</option>
+                                <option value="67">67</option>
+                                <option value="68">68</option>
+                                <option value="69">69</option>
+                                <option value="70">70</option>
+                                <option value="71">71</option>
+                                <option value="72">72</option>
+                                <option value="73">73</option>
+                                <option value="74">74</option>
+                                <option value="75">75</option>
+                                <option value="76">76</option>
+                                <option value="77">77</option>
+                                <option value="78">78</option>
+                                <option value="79">79</option>
+                                <option value="80">80</option>
+                                <option value="81">81</option>
+                                <option value="82">82</option>
+                                <option value="83">83</option>
+                                <option value="84">84</option>
+                                <option value="85">85</option>
+                                <option value="86">86</option>
+                                <option value="87">87</option>
+                                <option value="88">88</option>
+                                <option value="89">89</option>
+                                <option value="90">90</option>
+                                <option value="91">91</option>
+                                <option value="92">92</option>
+                                <option value="93">93</option>
+                                <option value="94">94</option>
+                                <option value="95">95</option>
+                                <option value="96">96</option>
+                                <option value="97">97</option>
+                                <option value="98">98</option>
+                                <option value="99">99</option>
+                                <option value="100">100</option>
+                              </select>
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if-->
+                          </div>
+                        </div>
+                        <div class="col">
+                          <span class="d-block mb-2 fw-medium"
+                            >Choose where to display your event</span
+                          ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="ammsite"
+                                value="AdultMatchMaker.com.au"
+                              /><label
+                                class="form-check-label small"
+                                for="ammsite"
+                                >AdultMatchMaker.com.au</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="gmmsite"
+                                value="GayMatchMaker.com.au"
+                              /><label
+                                class="form-check-label small"
+                                for="gmmsite"
+                                >GayMatchMaker.com.au</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="lmmsite"
+                                value="LesbianMatchMaker.com.au"
+                              /><label
+                                class="form-check-label small"
+                                for="lmmsite"
+                                >LesbianMatchMaker.com.au</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if-->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="mb-2">
+                        <h2 class="h4 mb-0">Recurring Dates</h2>
+                        <small class="fst-italic"
+                          >If this event reoccurs include other dates</small
+                        >
+                      </div>
+                      <span class="d-block mb-2 fw-medium"
+                        >Date &amp; Time
+                        <small
+                          >(Check box(s) to enter other dates to include)</small
+                        ></span
+                      >
+                      <div class="d-flex gap-1 align-items-center mb-2">
+                        <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                        <div class="">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="occur-1"
+                            /><!--v-if-->
+                          </div>
+                        </div>
+                        <!--v-if--><!--v-if-->
+                        <div class="d-flex flex-wrap gap-1 align-items-center">
+                          <!--v-if--><!--v-if--><!--v-if-->
+                          <div class="mb-0">
+                            <!--v-if--><select class="form-select">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                              <option value="12">12</option>
+                              <option value="13">13</option>
+                              <option value="14">14</option>
+                              <option value="15">15</option>
+                              <option value="16">16</option>
+                              <option value="17">17</option>
+                              <option value="18">18</option>
+                              <option value="19">19</option>
+                              <option value="20">20</option>
+                              <option value="21">21</option>
+                              <option value="22">22</option>
+                              <option value="23">23</option>
+                              <option value="24">24</option>
+                              <option value="25">25</option>
+                              <option selected="" value="26">26</option>
+                              <option value="27">27</option>
+                              <option value="28">28</option>
+                              <option value="29">29</option>
+                              <option value="30">30</option>
+                              <option value="31">31</option></select
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="mb-0">
+                            <!--v-if--><select class="form-select">
+                              <option value="January">January</option>
+                              <option value="February">February</option>
+                              <option value="March">March</option>
+                              <option value="April">April</option>
+                              <option value="May">May</option>
+                              <option value="June">June</option>
+                              <option value="July">July</option>
+                              <option value="August">August</option>
+                              <option value="September">September</option>
+                              <option value="October">October</option>
+                              <option selected="" value="November">
+                                November
+                              </option>
+                              <option value="December">December</option></select
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="mb-0">
+                            <!--v-if--><select class="form-select">
+                              <option selected="" value="2024">2024</option>
+                              <option value="2025">2025</option>
+                              <option value="2026">2026</option>
+                              <option value="2027">2027</option>
+                              <option value="2028">2028</option>
+                              <option value="2029">2029</option></select
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if-->
+                          <div class="d-flex gap-1 align-items-center mb-2">
+                            @
+                            <!--v-if--><!--v-if--><!--v-if-->
+                            <div class="mb-0">
+                              <!--v-if--><!--v-if--><select class="form-select">
+                                <option value="12:00 AM">12:00 AM</option>
+                                <option value="12:30 AM">12:30 AM</option>
+                                <option value="1:00 AM">1:00 AM</option>
+                                <option value="1:30 AM">1:30 AM</option>
+                                <option value="2:00 AM">2:00 AM</option>
+                                <option value="2:30 AM">2:30 AM</option>
+                                <option value="3:00 AM">3:00 AM</option>
+                                <option value="3:30 AM">3:30 AM</option>
+                                <option value="4:00 AM">4:00 AM</option>
+                                <option value="4:30 AM">4:30 AM</option>
+                                <option value="5:00 AM">5:00 AM</option>
+                                <option value="5:30 AM">5:30 AM</option>
+                                <option value="6:00 AM">6:00 AM</option>
+                                <option value="6:30 AM">6:30 AM</option>
+                                <option value="7:00 AM">7:00 AM</option>
+                                <option value="7:30 AM">7:30 AM</option>
+                                <option value="8:00 AM">8:00 AM</option>
+                                <option value="8:30 AM">8:30 AM</option>
+                                <option value="9:00 AM">9:00 AM</option>
+                                <option value="9:30 AM">9:30 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="10:30 AM">10:30 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="11:30 AM">11:30 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="12:30 PM">12:30 PM</option>
+                                <option value="1:00 PM">1:00 PM</option>
+                                <option value="1:30 PM">1:30 PM</option>
+                                <option value="2:00 PM">2:00 PM</option>
+                                <option value="2:30 PM">2:30 PM</option>
+                                <option value="3:00 PM">3:00 PM</option>
+                                <option value="3:30 PM">3:30 PM</option>
+                                <option value="4:00 PM">4:00 PM</option>
+                                <option value="4:30 PM">4:30 PM</option>
+                                <option value="5:00 PM">5:00 PM</option>
+                                <option value="5:30 PM">5:30 PM</option>
+                                <option value="6:00 PM">6:00 PM</option>
+                                <option value="6:30 PM">6:30 PM</option>
+                                <option value="7:00 PM">7:00 PM</option>
+                                <option value="7:30 PM">7:30 PM</option>
+                                <option value="8:00 PM">8:00 PM</option>
+                                <option value="8:30 PM">8:30 PM</option>
+                                <option value="9:00 PM">9:00 PM</option>
+                                <option value="9:30 PM">9:30 PM</option>
+                                <option value="10:00 PM">10:00 PM</option>
+                                <option value="10:30 PM">10:30 PM</option>
+                                <option value="11:00 PM">11:00 PM</option>
+                                <option value="11:30 PM">11:30 PM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                              </select>
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if-->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex gap-1 align-items-center mb-2">
+                        <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                        <div class="">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="occur-2"
+                            /><!--v-if-->
+                          </div>
+                        </div>
+                        <!--v-if--><!--v-if-->
+                        <div class="d-flex flex-wrap gap-1 align-items-center">
+                          <!--v-if--><!--v-if--><!--v-if-->
+                          <div class="mb-0">
+                            <!--v-if--><select class="form-select">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                              <option value="12">12</option>
+                              <option value="13">13</option>
+                              <option value="14">14</option>
+                              <option value="15">15</option>
+                              <option value="16">16</option>
+                              <option value="17">17</option>
+                              <option value="18">18</option>
+                              <option value="19">19</option>
+                              <option value="20">20</option>
+                              <option value="21">21</option>
+                              <option value="22">22</option>
+                              <option value="23">23</option>
+                              <option value="24">24</option>
+                              <option value="25">25</option>
+                              <option selected="" value="26">26</option>
+                              <option value="27">27</option>
+                              <option value="28">28</option>
+                              <option value="29">29</option>
+                              <option value="30">30</option>
+                              <option value="31">31</option></select
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="mb-0">
+                            <!--v-if--><select class="form-select">
+                              <option value="January">January</option>
+                              <option value="February">February</option>
+                              <option value="March">March</option>
+                              <option value="April">April</option>
+                              <option value="May">May</option>
+                              <option value="June">June</option>
+                              <option value="July">July</option>
+                              <option value="August">August</option>
+                              <option value="September">September</option>
+                              <option value="October">October</option>
+                              <option selected="" value="November">
+                                November
+                              </option>
+                              <option value="December">December</option></select
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="mb-0">
+                            <!--v-if--><select class="form-select">
+                              <option selected="" value="2024">2024</option>
+                              <option value="2025">2025</option>
+                              <option value="2026">2026</option>
+                              <option value="2027">2027</option>
+                              <option value="2028">2028</option>
+                              <option value="2029">2029</option></select
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if-->
+                          <div class="d-flex gap-1 align-items-center mb-2">
+                            @
+                            <!--v-if--><!--v-if--><!--v-if-->
+                            <div class="mb-0">
+                              <!--v-if--><!--v-if--><select class="form-select">
+                                <option value="12:00 AM">12:00 AM</option>
+                                <option value="12:30 AM">12:30 AM</option>
+                                <option value="1:00 AM">1:00 AM</option>
+                                <option value="1:30 AM">1:30 AM</option>
+                                <option value="2:00 AM">2:00 AM</option>
+                                <option value="2:30 AM">2:30 AM</option>
+                                <option value="3:00 AM">3:00 AM</option>
+                                <option value="3:30 AM">3:30 AM</option>
+                                <option value="4:00 AM">4:00 AM</option>
+                                <option value="4:30 AM">4:30 AM</option>
+                                <option value="5:00 AM">5:00 AM</option>
+                                <option value="5:30 AM">5:30 AM</option>
+                                <option value="6:00 AM">6:00 AM</option>
+                                <option value="6:30 AM">6:30 AM</option>
+                                <option value="7:00 AM">7:00 AM</option>
+                                <option value="7:30 AM">7:30 AM</option>
+                                <option value="8:00 AM">8:00 AM</option>
+                                <option value="8:30 AM">8:30 AM</option>
+                                <option value="9:00 AM">9:00 AM</option>
+                                <option value="9:30 AM">9:30 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="10:30 AM">10:30 AM</option>
+                                <option value="11:00 AM">11:00 AM</option>
+                                <option value="11:30 AM">11:30 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="12:30 PM">12:30 PM</option>
+                                <option value="1:00 PM">1:00 PM</option>
+                                <option value="1:30 PM">1:30 PM</option>
+                                <option value="2:00 PM">2:00 PM</option>
+                                <option value="2:30 PM">2:30 PM</option>
+                                <option value="3:00 PM">3:00 PM</option>
+                                <option value="3:30 PM">3:30 PM</option>
+                                <option value="4:00 PM">4:00 PM</option>
+                                <option value="4:30 PM">4:30 PM</option>
+                                <option value="5:00 PM">5:00 PM</option>
+                                <option value="5:30 PM">5:30 PM</option>
+                                <option value="6:00 PM">6:00 PM</option>
+                                <option value="6:30 PM">6:30 PM</option>
+                                <option value="7:00 PM">7:00 PM</option>
+                                <option value="7:30 PM">7:30 PM</option>
+                                <option value="8:00 PM">8:00 PM</option>
+                                <option value="8:30 PM">8:30 PM</option>
+                                <option value="9:00 PM">9:00 PM</option>
+                                <option value="9:30 PM">9:30 PM</option>
+                                <option value="10:00 PM">10:00 PM</option>
+                                <option value="10:30 PM">10:30 PM</option>
+                                <option value="11:00 PM">11:00 PM</option>
+                                <option value="11:30 PM">11:30 PM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                              </select>
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <hr class="border-2 mb-3" />
+                      <div class="mb-3">
+                        <h2 class="fw-medium h4">Full Event Details</h2>
+                      </div>
+                      <div class="mb-3">
+                        <label
+                          for="fulleventname"
+                          class="form-label small fw-medium"
+                          >Event Name</label
+                        ><input
+                          type="text"
+                          id="fulleventname"
+                          class="form-control"
+                          placeholder="Event name"
+                        /><!--v-if-->
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label
+                          for="fulleventdesc"
+                          class="form-label small fw-medium"
+                          >Event Description</label
+                        ><textarea
+                          rows="10"
+                          id="fulleventdesc"
+                          class="form-control"
+                        ></textarea>
+                        <p class="form-text fst-italic">
+                          Add detailed information about your event, no emoji
+                        </p>
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label
+                          for="venueaddress"
+                          class="form-label small fw-medium"
+                          >Venue &amp; Address*</label
+                        ><textarea
+                          rows="3"
+                          id="venueaddress"
+                          required=""
+                          class="form-control"
+                        ></textarea>
+                        <p class="form-text fst-italic">Max 200 characters</p>
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label
+                          for="dresscode"
+                          class="form-label small fw-medium"
+                          >Dress code</label
+                        ><textarea
+                          rows="5"
+                          id="dresscode"
+                          class="form-control"
+                        ></textarea>
+                        <p class="form-text fst-italic">Max 500 characters</p>
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label for="rules" class="form-label small fw-medium"
+                          >Rules</label
+                        ><textarea
+                          rows="5"
+                          id="rules"
+                          class="form-control"
+                        ></textarea>
+                        <p class="form-text fst-italic">Max 500 characters</p>
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label
+                          for="bookingurl"
+                          class="form-label small fw-medium"
+                          >Booking URL</label
+                        ><input
+                          type="text"
+                          id="bookingurl"
+                          class="form-control"
+                          placeholder="https://"
+                        /><!--v-if-->
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label
+                          for="ammmemberid"
+                          class="form-label small fw-medium"
+                          >AMM Member ID</label
+                        ><input
+                          type="text"
+                          id="ammmemberid"
+                          class="form-control"
+                        /><!--v-if-->
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label for="bookings" class="form-label small fw-medium"
+                          >Bookings</label
+                        ><textarea
+                          rows="3"
+                          id="bookings"
+                          class="form-control"
+                        ></textarea>
+                        <p class="form-text fst-italic">Max 200 characters</p>
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label for="ctemail" class="form-label small fw-medium"
+                          >Contact Email</label
+                        ><input
+                          type="email"
+                          id="ctemail"
+                          class="form-control"
+                          placeholder="john_doe@mail.com"
+                        /><!--v-if-->
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label
+                          for="otcontact"
+                          class="form-label small fw-medium"
+                          >Other Contact Info</label
+                        ><textarea
+                          rows="3"
+                          id="otcontact"
+                          class="form-control"
+                        ></textarea>
+                        <p class="form-text fst-italic">Max 200 characters</p>
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label for="cost" class="form-label small fw-medium"
+                          >Cost*</label
+                        ><textarea
+                          rows="3"
+                          id="cost"
+                          required=""
+                          class="form-control"
+                        ></textarea>
+                        <p class="form-text fst-italic">Max 200 characters</p>
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <!--v-if--><!--v-if--><label
+                          class="form-label small fw-medium"
+                          for="masthead"
+                          >MastHead Image</label
+                        ><input
+                          class="form-control"
+                          id="masthead"
+                          type="file"
+                          accept="image/jpeg, image/jpg"
+                        />
+                        <div class="form-text" id="masthead_help">
+                          Landscape banner, Max width 580px, Max height 170px,
+                          JPG format, file size less than 30k
+                        </div>
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-2">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="featured"
+                          /><label class="form-check-label small" for="featured"
+                            >Featured Event on Contact Us</label
+                          >
+                        </div>
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!-- <InputField id="share" title="Share this on Facebook/Twitter" type="checkbox" className="mb-3" nowrapper /> -->
+                    </div>
+                    <div
+                      class="modal fade"
+                      id="exampleModal"
+                      tabindex="-1"
+                      aria-labelledby=""
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog" style="max-width: 800px">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                              Event Listing Preview
+                            </h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="">
+                              <div class="mb-3">
+                                <img
+                                  src="https://placehold.co/500x150"
+                                  class="w-100 mb-3"
+                                  alt=""
+                                /><!--v-if--><small class="d-block fw-bold mb-3"
+                                  >Tuesday, 26 November 2024
+                                  <!--v-if--></small
+                                ><!--v-if--><!--v-if-->
+                                <div class="table-responsive mt-3">
+                                  <table class="table auto">
+                                    <tbody>
+                                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--v-if-->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex gap-3 justify-content-end">
+                      <a
+                        href="/admin/events/add-event-for-member"
+                        class="btn text-center"
+                        >Cancel</a
+                      ><button type="button" class="btn text-center">
+                        Preview</button
+                      ><button
+                        type="submit"
+                        class="btn btn-primary text-center"
+                      >
+                        Submit Event
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

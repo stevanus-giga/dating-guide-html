@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dating Guide Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="app" data-v-app="">
+      <header
+        class="navbar position-fixed bg-white flex-md-nowrap p-0 border-bottom w-100 z-2"
+      >
+        <a href="/user" class="router-link-active navbar-brand"
+          ><img src="/assets/images/logo.png" class="ms-2" alt="Logo"
+        /></a>
+        <ul class="navbar-nav flex-row d-md-none">
+          <li class="nav-item text-nowrap">
+            <button
+              class="nav-link px-3"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#sidebarMenu"
+              aria-controls="sidebarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="gigacon gigacon-hamburger"></i>
+            </button>
+          </li>
+        </ul>
+      </header>
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="h-100 sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary"
+          >
+            <div
+              class="offcanvas-md offcanvas-end bg-body-tertiary overflow-y-auto h-100"
+              tabindex="-1"
+              id="sidebarMenu"
+              aria-labelledby="sidebarMenuLabel"
+            >
+              <div class="offcanvas-header">
+                <img src="/assets/images/logo.png" alt="Logo" /><button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  data-bs-target="#sidebarMenu"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div
+                class="mt-lg-5 offcanvas-body d-md-flex flex-column p-0 pt-lg-3"
+              >
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a
+                      aria-current="page"
+                      href="/user"
+                      class="router-link-active nav-link d-flex align-items-center gap-2 link-dark"
+                      ><i class="gigacon gigacon-user"></i> My Account
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#dashboard-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-article me-2"></i
+                        >Advertisers</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="dashboard-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a
+                            href="/user/events"
+                            class="router-link-active router-link-exact-active nav-link link-dark"
+                            aria-current="page"
+                            >Event List
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/user/add-event" class="nav-link link-dark"
+                            >Submit an Event
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <hr class="my-3" />
+                <ul class="nav flex-column mt-auto">
+                  <li class="nav-item">
+                    <a
+                      href="/"
+                      class="nav-link link-dark d-flex align-items-center gap-2"
+                      ><i class="gigacon gigacon-log-out"></i> Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 my-5">
+            <div class="mx-auto container mx-auto py-3 mt-4">
+              <h1 class="h2 font-bold mb-3">My Event Entries</h1>
+              <div class="d-flex gap-2 flex-wrap align-items-center">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-outline-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Actions
+                  </button>
+                  <ul
+                    class="dropdown-menu dropdown-menu-start"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <li><a class="dropdown-item" href="#">Pause</a></li>
+                    <li><a class="dropdown-item" href="#">Resume</a></li>
+                    <li><a class="dropdown-item" href="#">View</a></li>
+                  </ul>
+                </div>
+                <a href="/user/create-event" class="btn btn-primary"
+                  ><i class="gigacon gigacon-plus-sign me-2"></i>Submit a new
+                  event</a
+                >
+              </div>
+              <div class="datatable">
+                <div
+                  id="DataTables_Table_0_wrapper"
+                  class="dt-container dt-bootstrap5 dt-empty-footer"
+                >
+                  <div class="row mt-2 justify-content-between">
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-start col-md-auto me-auto"
+                    >
+                      <div class="dt-length">
+                        <select
+                          name="DataTables_Table_0_length"
+                          aria-controls="DataTables_Table_0"
+                          class="form-select form-select-sm"
+                          id="dt-length-0"
+                        >
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                          <option value="200">200</option></select
+                        ><label for="dt-length-0"> entries per page</label>
+                      </div>
+                    </div>
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-end col-md-auto ms-auto"
+                    >
+                      <div class="dt-search">
+                        <label for="dt-search-0">Search:</label
+                        ><input
+                          type="search"
+                          class="form-control form-control-sm"
+                          id="dt-search-0"
+                          placeholder=""
+                          aria-controls="DataTables_Table_0"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2 justify-content-between dt-layout-table">
+                    <div
+                      class="d-md-flex justify-content-between align-items-center col-12 dt-layout-full col-md"
+                    >
+                      <table
+                        class="table table-hover table-striped dataTable"
+                        style="width: 100%"
+                        id="DataTables_Table_0"
+                        aria-describedby="DataTables_Table_0_info"
+                      >
+                        <colgroup>
+                          <col data-dt-column="0" style="width: 432.275px" />
+                          <col data-dt-column="1" style="width: 321.087px" />
+                          <col data-dt-column="2" style="width: 225.9px" />
+                          <col data-dt-column="3" style="width: 214.738px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th
+                              data-dt-column="0"
+                              rowspan="1"
+                              colspan="1"
+                              class="dt-orderable-asc dt-orderable-desc dt-ordering-asc"
+                              aria-sort="ascending"
+                              aria-label="Event Title: Activate to invert sorting"
+                              tabindex="0"
+                            >
+                              <span class="dt-column-title" role="button"
+                                >Event Title</span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                            <th
+                              data-dt-column="1"
+                              rowspan="1"
+                              colspan="1"
+                              class="dt-orderable-asc dt-orderable-desc"
+                              aria-label="Email: Activate to sort"
+                              tabindex="0"
+                            >
+                              <span class="dt-column-title" role="button"
+                                >Email</span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                            <th
+                              data-dt-column="2"
+                              rowspan="1"
+                              colspan="1"
+                              class="dt-type-date dt-orderable-asc dt-orderable-desc"
+                              aria-label="Event Date: Activate to sort"
+                              tabindex="0"
+                            >
+                              <span class="dt-column-title" role="button"
+                                >Event Date</span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                            <th
+                              data-dt-column="3"
+                              rowspan="1"
+                              colspan="1"
+                              class="dt-orderable-asc dt-orderable-desc"
+                              aria-label="Status: Activate to sort"
+                              tabindex="0"
+                            >
+                              <span class="dt-column-title" role="button"
+                                >Status</span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="41"
+                              />Art Workshop
+                            </td>
+                            <td>eva.brown@example.com</td>
+                            <td class="dt-type-date">18 February 2025</td>
+                            <td>
+                              <span class="badge bg-danger">Paused</span
+                              ><a
+                                href="edit-event?41"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="41"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="11"
+                              />Banksia Drinks Night
+                            </td>
+                            <td>john.doe@example.com</td>
+                            <td class="dt-type-date">1 January 2022</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?11"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="11"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="52"
+                              />Beach Volleyball Meetup
+                            </td>
+                            <td>grace.collins@example.com</td>
+                            <td class="dt-type-date">9 January 2026</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?52"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="52"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="27"
+                              />Board Game Night
+                            </td>
+                            <td>laura.mitchell@example.com</td>
+                            <td class="dt-type-date">8 December 2023</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span
+                              ><a
+                                href="edit-event?27"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="27"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="46"
+                              />Boardwalk Sunset Meetup
+                            </td>
+                            <td>jake.hall@example.com</td>
+                            <td class="dt-type-date">20 July 2025</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span
+                              ><a
+                                href="edit-event?46"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="46"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="35"
+                              />Book Club Gathering
+                            </td>
+                            <td>amelia.james@example.com</td>
+                            <td class="dt-type-date">3 August 2024</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?35"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="35"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="45"
+                              />Botanical Garden Stroll
+                            </td>
+                            <td>emily.morgan@example.com</td>
+                            <td class="dt-type-date">4 June 2025</td>
+                            <td>
+                              <span class="badge bg-danger">Paused</span
+                              ><a
+                                href="edit-event?45"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="45"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="47"
+                              />Charity Bake-Off
+                            </td>
+                            <td>amber.miller@example.com</td>
+                            <td class="dt-type-date">30 August 2025</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?47"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="47"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="19"
+                              />Coastal BBQ Social
+                            </td>
+                            <td>dave.clarke@example.com</td>
+                            <td class="dt-type-date">5 April 2023</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?19"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="19"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="16"
+                              />Cocktail Drinks Social Night
+                            </td>
+                            <td>mike.john123@example.com</td>
+                            <td class="dt-type-date">20 October 2023</td>
+                            <td>
+                              <span class="badge bg-danger">Paused</span
+                              ><a
+                                href="edit-event?16"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="16"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="33"
+                              />Coffee and Code Meetup
+                            </td>
+                            <td>daisy.thompson@example.com</td>
+                            <td class="dt-type-date">18 June 2024</td>
+                            <td>
+                              <span class="badge bg-danger">Paused</span
+                              ><a
+                                href="edit-event?33"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="33"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="24"
+                              />Comedy Improv Show
+                            </td>
+                            <td>ben.taylor@example.com</td>
+                            <td class="dt-type-date">15 September 2023</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?24"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="24"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="48"
+                              />Cooking Class Evening
+                            </td>
+                            <td>george.walker@example.com</td>
+                            <td class="dt-type-date">14 September 2025</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?48"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="48"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="54"
+                              />Cultural Food Fest
+                            </td>
+                            <td>liam.adams@example.com</td>
+                            <td class="dt-type-date">13 March 2026</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?54"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="54"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="34"
+                              />Cycling Adventure
+                            </td>
+                            <td>joshua.moore@example.com</td>
+                            <td class="dt-type-date">25 July 2024</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?34"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="34"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="49"
+                              />DJs &amp; Dancing Night
+                            </td>
+                            <td>kevin.robinson@example.com</td>
+                            <td class="dt-type-date">3 October 2025</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span
+                              ><a
+                                href="edit-event?49"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="49"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="15"
+                              />Dress Down Swingers Party
+                            </td>
+                            <td>mike.williams@example.com</td>
+                            <td class="dt-type-date">1 April 2022</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span
+                              ><a
+                                href="edit-event?15"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="15"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="26"
+                              />Eco Workshop
+                            </td>
+                            <td>lucas.king@example.com</td>
+                            <td class="dt-type-date">17 November 2023</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?26"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="26"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="64"
+                              />Eco-Friendly Workshop
+                            </td>
+                            <td>ella.martin@example.com</td>
+                            <td class="dt-type-date">20 January 2027</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?64"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="64"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="61"
+                              />Farmers Market Visit
+                            </td>
+                            <td>anna.mitchell@example.com</td>
+                            <td class="dt-type-date">5 October 2026</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span
+                              ><a
+                                href="edit-event?61"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="61"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="39"
+                              />Film Screening
+                            </td>
+                            <td>sophie.harris@example.com</td>
+                            <td class="dt-type-date">2 December 2024</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?39"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="39"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="66"
+                              />Fishing Enthusiasts Meetup
+                            </td>
+                            <td>riley.cook@example.com</td>
+                            <td class="dt-type-date">4 March 2027</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span
+                              ><a
+                                href="edit-event?66"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="66"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="25"
+                              />Foodie Feast
+                            </td>
+                            <td>olivia.scott@example.com</td>
+                            <td class="dt-type-date">3 October 2023</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?25"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="25"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="32"
+                              />Forest Meditation Retreat
+                            </td>
+                            <td>alex.green@example.com</td>
+                            <td class="dt-type-date">7 May 2024</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span
+                              ><a
+                                href="edit-event?32"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="32"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="57"
+                              />Hiking Meetup
+                            </td>
+                            <td>ella.jones@example.com</td>
+                            <td class="dt-type-date">20 June 2026</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span
+                              ><a
+                                href="edit-event?57"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="57"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="65"
+                              />Holiday Bazaar
+                            </td>
+                            <td>daniel.wood@example.com</td>
+                            <td class="dt-type-date">15 February 2027</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?65"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="65"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="37"
+                              />Language Exchange Night
+                            </td>
+                            <td>mia.turner@example.com</td>
+                            <td class="dt-type-date">6 October 2024</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?37"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="37"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="18"
+                              />Melbourne Jazz Night
+                            </td>
+                            <td>sarah.connor@example.com</td>
+                            <td class="dt-type-date">15 March 2023</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?18"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="18"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="58"
+                              />Mindfulness Workshop
+                            </td>
+                            <td>zack.roberts@example.com</td>
+                            <td class="dt-type-date">15 July 2026</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?58"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="58"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="59"
+                              />Music Jam Session
+                            </td>
+                            <td>mia.morris@example.com</td>
+                            <td class="dt-type-date">30 August 2026</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?59"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="59"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="63"
+                              />Open Air Theatre
+                            </td>
+                            <td>noah.robinson@example.com</td>
+                            <td class="dt-type-date">7 December 2026</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span
+                              ><a
+                                href="edit-event?63"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="63"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="22"
+                              />Open Mic Night
+                            </td>
+                            <td>tom.jones@example.com</td>
+                            <td class="dt-type-date">12 July 2023</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?22"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="22"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="42"
+                              />Open Water Swim
+                            </td>
+                            <td>aaron.carter@example.com</td>
+                            <td class="dt-type-date">11 March 2025</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?42"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="42"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="43"
+                              />Outdoor Film Fest
+                            </td>
+                            <td>molly.white@example.com</td>
+                            <td class="dt-type-date">7 April 2025</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?43"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="43"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="38"
+                              />Paint &amp; Sip Event
+                            </td>
+                            <td>william.lee@example.com</td>
+                            <td class="dt-type-date">9 November 2024</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?38"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="38"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="55"
+                              />Pet Lovers Social
+                            </td>
+                            <td>mason.carter@example.com</td>
+                            <td class="dt-type-date">5 April 2026</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span
+                              ><a
+                                href="edit-event?55"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="55"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="29"
+                              />Photography Walk
+                            </td>
+                            <td>ella.watson@example.com</td>
+                            <td class="dt-type-date">14 February 2024</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span
+                              ><a
+                                href="edit-event?29"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="29"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="53"
+                              />Picnic in the Park
+                            </td>
+                            <td>chloe.richards@example.com</td>
+                            <td class="dt-type-date">18 February 2026</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?53"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="53"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="51"
+                              />River Kayak Adventure
+                            </td>
+                            <td>zac.green@example.com</td>
+                            <td class="dt-type-date">15 December 2025</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span
+                              ><a
+                                href="edit-event?51"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="51"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="17"
+                              />Rooftop Mixer
+                            </td>
+                            <td>chris.parker@example.com</td>
+                            <td class="dt-type-date">10 February 2023</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?17"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="17"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="31"
+                              />Sailing Regatta
+                            </td>
+                            <td>chloe.roberts@example.com</td>
+                            <td class="dt-type-date">10 April 2024</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span
+                              ><a
+                                href="edit-event?31"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="31"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="13"
+                              />Social Meet and Greet Drinks Night
+                            </td>
+                            <td>bob.smith@example.com</td>
+                            <td class="dt-type-date">1 February 2022</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span
+                              ><a
+                                href="edit-event?13"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="13"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="14"
+                              />Speakeasy Petting Party
+                            </td>
+                            <td>alice.johnson@example.com</td>
+                            <td class="dt-type-date">1 March 2022</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?14"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="14"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="40"
+                              />Spring Garden Tour
+                            </td>
+                            <td>jack.wood@example.com</td>
+                            <td class="dt-type-date">8 January 2025</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span
+                              ><a
+                                href="edit-event?40"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="40"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="56"
+                              />Street Art Walk
+                            </td>
+                            <td>ava.davis@example.com</td>
+                            <td class="dt-type-date">27 May 2026</td>
+                            <td>
+                              <span class="badge bg-danger">Paused</span
+                              ><a
+                                href="edit-event?56"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="56"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="36"
+                              />Sunrise Yoga Session
+                            </td>
+                            <td>ethan.wilson@example.com</td>
+                            <td class="dt-type-date">12 September 2024</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span
+                              ><a
+                                href="edit-event?36"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="36"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="62"
+                              />Sunset Beach Picnic
+                            </td>
+                            <td>ryan.kelly@example.com</td>
+                            <td class="dt-type-date">12 November 2026</td>
+                            <td>
+                              <span class="badge bg-danger">Paused</span
+                              ><a
+                                href="edit-event?62"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="62"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="21"
+                              />Sunset Wine Tasting
+                            </td>
+                            <td>lisa.brown@example.com</td>
+                            <td class="dt-type-date">1 June 2023</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span
+                              ><a
+                                href="edit-event?21"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="21"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="30"
+                              />Swing Dance Social
+                            </td>
+                            <td>ryan.lewis@example.com</td>
+                            <td class="dt-type-date">22 March 2024</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?30"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="30"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="sorting_1">
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="12"
+                              />Toowoomba Orgy in the Woods
+                            </td>
+                            <td>jane.doe@example.com</td>
+                            <td class="dt-type-date">15 January 2022</td>
+                            <td>
+                              <span class="badge bg-success">Active</span
+                              ><a
+                                href="edit-event?12"
+                                class="ms-3 text-dark text-decoration-none"
+                                data-item-id="12"
+                                ><i class="gigacon gigacon-edit me-1"></i
+                                >Edit</a
+                              >
+                            </td>
+                          </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="row mt-2 justify-content-between">
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-start col-md-auto me-auto"
+                    >
+                      <div
+                        class="dt-info"
+                        aria-live="polite"
+                        id="DataTables_Table_0_info"
+                        role="status"
+                      >
+                        Showing 1 to 50 of 56 entries
+                      </div>
+                    </div>
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-end col-md-auto ms-auto"
+                    >
+                      <div class="dt-paging">
+                        <nav aria-label="pagination">
+                          <ul class="pagination">
+                            <li class="dt-paging-button page-item disabled">
+                              <button
+                                class="page-link first"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_0"
+                                aria-disabled="true"
+                                aria-label="First"
+                                data-dt-idx="first"
+                                tabindex="-1"
+                              >
+                                «
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item disabled">
+                              <button
+                                class="page-link previous"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_0"
+                                aria-disabled="true"
+                                aria-label="Previous"
+                                data-dt-idx="previous"
+                                tabindex="-1"
+                              >
+                                ‹
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item active">
+                              <button
+                                class="page-link"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_0"
+                                aria-current="page"
+                                data-dt-idx="0"
+                              >
+                                1
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item">
+                              <button
+                                class="page-link"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_0"
+                                data-dt-idx="1"
+                              >
+                                2
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item">
+                              <button
+                                class="page-link next"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_0"
+                                aria-label="Next"
+                                data-dt-idx="next"
+                              >
+                                ›
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item">
+                              <button
+                                class="page-link last"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_0"
+                                aria-label="Last"
+                                data-dt-idx="last"
+                              >
+                                »
+                              </button>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

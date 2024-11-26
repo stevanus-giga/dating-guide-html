@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dating Guide Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="app" data-v-app="">
+      <header
+        class="navbar position-fixed bg-white flex-md-nowrap p-0 border-bottom w-100 z-2"
+      >
+        <a href="/admin" class="router-link-active navbar-brand"
+          ><img src="/assets/images/logo.png" class="ms-2" alt="Logo"
+        /></a>
+        <ul class="navbar-nav flex-row d-lg-none">
+          <li class="nav-item text-nowrap">
+            <button
+              class="nav-link px-3"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#sidebarMenu"
+              aria-controls="sidebarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="gigacon gigacon-hamburger"></i>
+            </button>
+          </li>
+        </ul>
+      </header>
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="h-100 sidebar border border-right col-lg-2 p-0 bg-body-tertiary"
+          >
+            <div
+              class="offcanvas-lg offcanvas-end bg-body-tertiary overflow-y-auto h-100"
+              tabindex="-1"
+              id="sidebarMenu"
+              aria-labelledby="sidebarMenuLabel"
+            >
+              <div class="offcanvas-header">
+                <img src="/assets/images/logo.png" alt="Logo" /><button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  data-bs-target="#sidebarMenu"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div
+                class="mt-lg-5 offcanvas-body d-lg-flex flex-column p-0 pt-lg-3"
+              >
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#dashboard-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-heart-double me-2"></i
+                        >Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="dashboard-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a
+                            href="/admin/events"
+                            class="router-link-active router-link-exact-active nav-link link-dark"
+                            aria-current="page"
+                            >Edit Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Events
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >3</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/add-event-for-member"
+                            class="nav-link link-dark"
+                            >Add Event for Member</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/sponsored-ads"
+                            class="nav-link link-dark"
+                            >Sponsored Ads</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/homepage-events"
+                            class="nav-link link-dark"
+                            >Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/dg-homepage-events"
+                            class="nav-link link-dark"
+                            >DG Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/logins"
+                            class="nav-link link-dark"
+                            >Logins</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#travel-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-star-double me-2"></i>Travel
+                        Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="travel-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/travel" class="nav-link link-dark"
+                            >Travel Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/sponsored-ads.html"
+                            class="nav-link link-dark"
+                            >Travel SponsoredAds</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/pending-events"
+                            class="nav-link link-dark"
+                            >Travel Events Pending
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#clubs-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-wink-mutual me-2"></i
+                        >Clubs</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="clubs-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/clubs" class="nav-link link-dark"
+                            >Clubs</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/clubs/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Clubs
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#mail-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-envelope me-2"></i>Mail</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="mail-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/mail" class="nav-link link-dark"
+                            >Pending Mail</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <hr class="my-3" />
+                <ul class="nav flex-column mt-auto">
+                  <li class="nav-item">
+                    <a
+                      href="/"
+                      class="nav-link link-dark d-flex align-items-center gap-2"
+                      ><i class="gigacon gigacon-log-out"></i> Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <main class="col-lg-9 ms-sm-auto col-lg-10 px-md-4 my-5">
+            <div class="mx-auto container mx-auto py-3 mt-4">
+              <h1 class="h2 font-bold mb-3">Edit your Sponsored Ads</h1>
+              <img
+                src="https://placehold.co/400x100"
+                class="w-100 mb-3"
+                alt=""
+              />
+              <h2>Chateau Vino Black Friday Angels &amp; Demons</h2>
+              <small class="d-block fw-bold mb-3"
+                >Friday, September 13, 2019 (8:30pm)</small
+              >
+              <p>
+                Chateau Vino want you to show your angelic or naughty side at
+                their infamous Angels and Demons Party weekend. Will you be
+                wearing angelic white or devilish red? Are you sweet and angelic
+                or do you harbour a demon inside? Either way you're in for a
+                heavenly night of fun … or perhaps a devilish night of
+                debauchery.
+              </p>
+              <p>
+                Since 2011 swingers from all parts of Australia have been coming
+                to Chateau Vino Swingers Club, the first council approved club
+                on the Gold Coast to meet, party and play.
+              </p>
+              <p>
+                It's a fun, friendly place to MEET, as we provide a safe and
+                non-confrontational venue for swingers to live out their
+                fantasies in absolute comfort.
+              </p>
+              <p>
+                If you like to PARTY, then we are the "go to" venue in South
+                East Queensland to mix it up with like minded "lifestylers".
+                Many visitors from interstate and overseas love our extra large
+                nightclub style dancefloor and lighting and sound system.
+              </p>
+              <p>
+                Our indoor social areas are large, spacious and have intimate
+                areas where "naughty talk" is the norm. The club is also air
+                conditioned, and we can keep you cool in summer and warm in
+                winter, when you want to shed unnecessary street clothes.
+              </p>
+              <p>
+                Our outdoor area is covered and smokers have their very own area
+                with piped music, where you won't feel left out of the action.
+                We also have a pool table, which is a real ice breaker for the
+                more shy couples and singles.
+              </p>
+              <div class="table-responsive">
+                <table class="table auto">
+                  <tbody>
+                    <tr>
+                      <td><span class="fw-bold">Venue:</span></td>
+                      <td>
+                        Chateau Vino Adult Venue 22 Kamholtz Court, Molendinar
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span class="fw-bold">Cost:</span></td>
+                      <td>For more information visit our website.</td>
+                    </tr>
+                    <tr>
+                      <td><span class="fw-bold">Contact Info:</span></td>
+                      <td>
+                        You can contact us via email or phone 0403 219 293 or
+                        via our AMM profile:
+                        <a
+                          href="http://www.adultmatchmaker.com.au/profiles/chateau.vino"
+                          >http://www.adultmatchmaker.com.au/profiles/chateau.vino</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span class="fw-bold">Bookings:</span></td>
+                      <td>
+                        Please call 0403 219 293 to book or talk to your hosts.
+                        Or visit our award winning website for more details.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span class="fw-bold">Dress Code:</span></td>
+                      <td>Dress code is smart casual or sexy.</td>
+                    </tr>
+                    <tr>
+                      <td><span class="fw-bold">Rules:</span></td>
+                      <td>Normal club rules apply</td>
+                    </tr>
+                    <tr>
+                      <td><span class="fw-bold">Contact Email:</span></td>
+                      <td>
+                        <a
+                          href="mailto:marketing@chateauvino.com.au?subject=&amp;body=Inquiring%20about%20event%20on%20-%20Friday, September 13, 2019%20%20%208:30pm"
+                          >email event organiser
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><span class="fw-bold">Website:</span></td>
+                      <td>
+                        <a href="http://www.chateauvino.com.au" target="_blank"
+                          >http://www.chateauvino.com.au</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="max-w-md bg-gray p-3">
+                <small>Please enter your sponsored Ad details below</small>
+                <h2 class="h4">Sponsored Ad &amp; Featured Ad (required)</h2>
+                <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                <div class="mb-3">
+                  <!--v-if--><!--v-if--><label
+                    class="form-label small fw-medium"
+                    for="masthead"
+                    >Update Sponsored Image</label
+                  ><input
+                    class="form-control"
+                    id="masthead"
+                    type="file"
+                    accept="image/jpeg, image/jpg"
+                  />
+                  <div class="form-text" id="masthead_help">
+                    Keep image or browse to update to new image
+                  </div>
+                </div>
+                <div>
+                  <span class="d-block mb-2 fw-medium"
+                    >Choose where to display your sponsored ad</span
+                  ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                  <div class="">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="ammsite"
+                        value="AdultMatchMaker.com.au"
+                      /><label class="form-check-label small" for="ammsite"
+                        >AdultMatchMaker.com.au</label
+                      >
+                    </div>
+                  </div>
+                  <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                  <div class="">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="gmmsite"
+                        value="GayMatchMaker.com.au"
+                      /><label class="form-check-label small" for="gmmsite"
+                        >GayMatchMaker.com.au</label
+                      >
+                    </div>
+                  </div>
+                  <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                  <div class="">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="lmmsite"
+                        value="LesbianMatchMaker.com.au"
+                      /><label class="form-check-label small" for="lmmsite"
+                        >LesbianMatchMaker.com.au</label
+                      >
+                    </div>
+                  </div>
+                  <!--v-if--><!--v-if-->
+                </div>
+                <hr />
+                <h2 class="h4">Featured Ad (required)</h2>
+                <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                <div class="">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="featuredAd"
+                    /><label class="form-check-label small" for="featuredAd"
+                      >Include as featured ad</label
+                    >
+                  </div>
+                </div>
+                <!--v-if--><!--v-if-->
+                <div class="row">
+                  <div class="col-lg-5">
+                    <div class="mb-3">
+                      <label for="titleName" class="form-label small fw-medium"
+                        >Title*</label
+                      ><input
+                        type="text"
+                        id="titleName"
+                        class="form-control"
+                        required=""
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="mb-3">
+                      <label for="textColor" class="form-label small fw-medium"
+                        >Text Colour (Title)</label
+                      ><input
+                        type="color"
+                        id="textColor"
+                        class="form-control form-control-color"
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <span class="fw-medium small">Event Date</span>
+                  <p>Friday, 15 November 2024 @ 8:30pm</p>
+                </div>
+                <div class="row">
+                  <div class="col-lg-5">
+                    <!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <label for="line1" class="form-label small fw-medium"
+                        >Line 1*</label
+                      ><textarea
+                        rows="3"
+                        id="line1"
+                        required=""
+                        class="form-control"
+                      ></textarea>
+                      <p class="form-text fst-italic">(2 lines max)</p>
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                  </div>
+                  <div class="col-lg-7">
+                    <div class="mb-3">
+                      <label
+                        for="textColorLine1"
+                        class="form-label small fw-medium"
+                        >Text Colour (Line 1)</label
+                      ><input
+                        type="color"
+                        id="textColorLine1"
+                        class="form-control form-control-color"
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-5">
+                    <!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <label for="line2" class="form-label small fw-medium"
+                        >Line 2*</label
+                      ><textarea
+                        rows="3"
+                        id="line2"
+                        required=""
+                        class="form-control"
+                      ></textarea>
+                      <p class="form-text fst-italic">(2 lines max)</p>
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="col-lg-2">
+                    <div class="mb-3">
+                      <label for="bgColor" class="form-label small fw-medium"
+                        >Background Colour</label
+                      ><input
+                        type="color"
+                        id="bgColor"
+                        class="form-control form-control-color"
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                  </div>
+                  <div class="col-lg-2">
+                    <div class="mb-3">
+                      <label
+                        for="borderColor"
+                        class="form-label small fw-medium"
+                        >Border Colour</label
+                      ><input
+                        type="color"
+                        id="borderColor"
+                        class="form-control form-control-color"
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                  </div>
+                </div>
+                <hr />
+                <h2 class="h4">Sponsored Ad (required)</h2>
+                <div class="mb-3">
+                  <label
+                    for="sponsoredAdTitle"
+                    class="form-label small fw-medium"
+                    >Sponsored Ad Title*</label
+                  ><input
+                    type="text"
+                    id="sponsoredAdTitle"
+                    class="form-control"
+                    required=""
+                  /><!--v-if-->
+                </div>
+                <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                <div class="mb-3">
+                  <label
+                    for="sponsoredAdDescription"
+                    class="form-label small fw-medium"
+                    >Sponsored Ad Description*</label
+                  ><textarea
+                    rows="3"
+                    id="sponsoredAdDescription"
+                    required=""
+                    class="form-control"
+                  ></textarea>
+                  <p class="form-text fst-italic">(3 lines max and ideal)</p>
+                </div>
+                <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                <div class="d-flex gap-3 justify-content-end">
+                  <a href="/admin/events/sponsored-ads" class="btn text-center"
+                    >Cancel</a
+                  ><button type="submit" class="btn btn-primary text-center">
+                    Save Changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

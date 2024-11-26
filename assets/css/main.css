@@ -1,0 +1,98 @@
+@import './gigacon.css';
+
+.sidebar {
+  position: fixed;
+}
+
+.btn-primary {
+  background-color: #9aa4ec !important;
+  border-color: #9aa4ec !important;
+}
+
+.btn-danger {
+  background-color: #f48882 !important;
+  border-color: #f48882 !important;
+}
+
+.btn-success {
+  background-color: #4caa2b !important;
+  border-color: #4caa2b !important;
+}
+
+.sidebar .nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.badge.bg-danger {
+  background-color: #ff8989 !important;
+}
+
+.badge.bg-success {
+  background-color: #7abd91 !important;
+}
+
+.pre-wrap {
+  white-space: pre-wrap;
+}
+
+table .badge {
+  min-width: 70px;
+}
+
+.bg-gray {
+  background-color: #bcb4b4;
+}
+
+.hover-grey:hover {
+  background-color: rgb(243 244 246);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+table.table:not(.auto) {
+  min-width: 1000px;
+}
+
+div.dt-container div.dt-layout-full {
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mail-table thead th {
+  width: 50%;
+}
+
+@media (min-width: 992px) {
+  .w-lg-25 {
+    width: 25% !important;
+  }
+
+  .w-lg-50 {
+    width: 50% !important;
+  }
+
+  .w-lg-75 {
+    width: 75% !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    position: relative;
+  }
+
+  .mail-table thead th {
+    width: 100%;
+  }
+}

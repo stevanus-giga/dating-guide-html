@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dating Guide Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="app" data-v-app="">
+      <header
+        class="navbar position-fixed bg-white flex-md-nowrap p-0 border-bottom w-100 z-2"
+      >
+        <a href="/admin" class="router-link-active navbar-brand"
+          ><img src="/assets/images/logo.png" class="ms-2" alt="Logo"
+        /></a>
+        <ul class="navbar-nav flex-row d-lg-none">
+          <li class="nav-item text-nowrap">
+            <button
+              class="nav-link px-3"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#sidebarMenu"
+              aria-controls="sidebarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="gigacon gigacon-hamburger"></i>
+            </button>
+          </li>
+        </ul>
+      </header>
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="h-100 sidebar border border-right col-lg-2 p-0 bg-body-tertiary"
+          >
+            <div
+              class="offcanvas-lg offcanvas-end bg-body-tertiary overflow-y-auto h-100"
+              tabindex="-1"
+              id="sidebarMenu"
+              aria-labelledby="sidebarMenuLabel"
+            >
+              <div class="offcanvas-header">
+                <img src="/assets/images/logo.png" alt="Logo" /><button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  data-bs-target="#sidebarMenu"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div
+                class="mt-lg-5 offcanvas-body d-lg-flex flex-column p-0 pt-lg-3"
+              >
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#dashboard-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-heart-double me-2"></i
+                        >Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="dashboard-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a
+                            href="/admin/events"
+                            class="router-link-active router-link-exact-active nav-link link-dark"
+                            aria-current="page"
+                            >Edit Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Events
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >3</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/add-event-for-member"
+                            class="nav-link link-dark"
+                            >Add Event for Member</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/sponsored-ads"
+                            class="nav-link link-dark"
+                            >Sponsored Ads</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/homepage-events"
+                            class="nav-link link-dark"
+                            >Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/dg-homepage-events"
+                            class="nav-link link-dark"
+                            >DG Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/logins"
+                            class="nav-link link-dark"
+                            >Logins</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#travel-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-star-double me-2"></i>Travel
+                        Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="travel-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/travel" class="nav-link link-dark"
+                            >Travel Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/sponsored-ads.html"
+                            class="nav-link link-dark"
+                            >Travel SponsoredAds</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/pending-events"
+                            class="nav-link link-dark"
+                            >Travel Events Pending
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#clubs-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-wink-mutual me-2"></i
+                        >Clubs</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="clubs-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/clubs" class="nav-link link-dark"
+                            >Clubs</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/clubs/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Clubs
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#mail-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-envelope me-2"></i>Mail</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="mail-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/mail" class="nav-link link-dark"
+                            >Pending Mail</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <hr class="my-3" />
+                <ul class="nav flex-column mt-auto">
+                  <li class="nav-item">
+                    <a
+                      href="/"
+                      class="nav-link link-dark d-flex align-items-center gap-2"
+                      ><i class="gigacon gigacon-log-out"></i> Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <main class="col-lg-9 ms-sm-auto col-lg-10 px-md-4 my-5">
+            <div class="mx-auto container mx-auto py-3 mt-4">
+              <div class="mx-auto bg-gray p-4 mb-4">
+                <h1 class="h2 font-bold mb-2">New Sponsored Ad</h1>
+                <p>
+                  First - Select a 'Full Details Ad' that will link to the
+                  Sponsored Ad
+                </p>
+                <div class="d-flex gap-2 w-lg-75">
+                  <div class="w-100 mb-3">
+                    <!--v-if--><input
+                      type="text"
+                      id="eventtitle"
+                      class="form-control"
+                      placeholder="Title"
+                    /><!--v-if-->
+                  </div>
+                  <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><button
+                    type="submit"
+                    class="btn btn-primary px-3 px-lg-5 mb-3"
+                  >
+                    Search
+                  </button>
+                </div>
+                <div class="d-flex gap-2 w-lg-50">
+                  <div class="w-100">
+                    <!--v-if--><input
+                      type="text"
+                      id="eventid"
+                      class="form-control"
+                      placeholder="Event ID"
+                    /><!--v-if-->
+                  </div>
+                  <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><button
+                    type="submit"
+                    class="btn btn-primary px-3 px-lg-5"
+                  >
+                    Search
+                  </button>
+                </div>
+                <div class="mb-3">
+                  <span class="d-block mb-2 small fw-medium text-gray-900 mt-3"
+                    >Event Date</span
+                  >
+                  <div class="d-flex flex-wrap gap-2">
+                    <!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-0">
+                      <!--v-if--><!--v-if--><select
+                        id="day"
+                        class="form-select"
+                      >
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option selected="" value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                      </select>
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-0">
+                      <!--v-if--><!--v-if--><select
+                        id="month"
+                        class="form-select"
+                      >
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option selected="" value="November">November</option>
+                        <option value="December">December</option>
+                      </select>
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-0">
+                      <!--v-if--><!--v-if--><select
+                        id="year"
+                        class="form-select"
+                      >
+                        <option selected="" value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                      </select>
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if-->
+                    <div class="d-flex flex-wrap gap-2">
+                      <button
+                        type="submit"
+                        class="btn btn-primary px-3 px-lg-4"
+                      >
+                        Exact Date</button
+                      ><button
+                        type="submit"
+                        class="btn btn-primary px-3 px-lg-4"
+                      >
+                        By Month
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex gap-2 flex-wrap align-items-center"></div>
+              <div class="datatable">
+                <div
+                  id="DataTables_Table_1_wrapper"
+                  class="dt-container dt-bootstrap5 dt-empty-footer"
+                >
+                  <div class="row mt-2 justify-content-between">
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-start col-md-auto me-auto"
+                    >
+                      <div class="dt-length">
+                        <select
+                          name="DataTables_Table_1_length"
+                          aria-controls="DataTables_Table_1"
+                          class="form-select form-select-sm"
+                          id="dt-length-1"
+                        >
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                          <option value="200">200</option></select
+                        ><label for="dt-length-1"> entries per page</label>
+                      </div>
+                    </div>
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-end col-md-auto ms-auto"
+                    >
+                      <div class="dt-search">
+                        <label for="dt-search-1">Search:</label
+                        ><input
+                          type="search"
+                          class="form-control form-control-sm"
+                          id="dt-search-1"
+                          placeholder=""
+                          aria-controls="DataTables_Table_1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-2 justify-content-between dt-layout-table">
+                    <div
+                      class="d-md-flex justify-content-between align-items-center col-12 dt-layout-full col-md"
+                    >
+                      <table
+                        class="table table-hover table-striped dataTable"
+                        width="100%"
+                        style="width: 100%"
+                        id="DataTables_Table_1"
+                        aria-describedby="DataTables_Table_1_info"
+                      >
+                        <colgroup>
+                          <col data-dt-column="0" style="width: 169.3px" />
+                          <col data-dt-column="1" style="width: 257.95px" />
+                          <col data-dt-column="2" style="width: 144.325px" />
+                          <col data-dt-column="3" style="width: 444.938px" />
+                          <col data-dt-column="4" style="width: 177.488px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th
+                              data-dt-column="0"
+                              rowspan="1"
+                              colspan="1"
+                              class="dt-orderable-asc dt-orderable-desc"
+                              aria-label="Event ID: Activate to sort"
+                              tabindex="0"
+                            >
+                              <span class="dt-column-title" role="button"
+                                >Event ID</span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                            <th
+                              data-dt-column="1"
+                              rowspan="1"
+                              colspan="1"
+                              class="dt-type-date dt-orderable-asc dt-orderable-desc dt-ordering-desc"
+                              aria-sort="descending"
+                              aria-label="Event Date: Activate to remove sorting"
+                              tabindex="0"
+                            >
+                              <span class="dt-column-title" role="button"
+                                >Event Date</span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                            <th
+                              data-dt-column="2"
+                              rowspan="1"
+                              colspan="1"
+                              class="dt-orderable-asc dt-orderable-desc"
+                              aria-label="Status: Activate to sort"
+                              tabindex="0"
+                            >
+                              <span class="dt-column-title" role="button"
+                                >Status</span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                            <th
+                              data-dt-column="3"
+                              rowspan="1"
+                              colspan="1"
+                              class="dt-orderable-asc dt-orderable-desc"
+                              aria-label="Title: Activate to sort"
+                              tabindex="0"
+                            >
+                              <span class="dt-column-title" role="button"
+                                >Title</span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                            <th
+                              data-dt-column="4"
+                              rowspan="1"
+                              colspan="1"
+                              class="dt-orderable-none"
+                              aria-label=""
+                            >
+                              <span class="dt-column-title"></span
+                              ><span class="dt-column-order"></span>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="66"
+                              />66
+                            </td>
+                            <td class="dt-type-date sorting_1">4 March 2027</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span>
+                            </td>
+                            <td>Fishing Enthusiasts Meetup</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="66"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="65"
+                              />65
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              15 February 2027
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span>
+                            </td>
+                            <td>Holiday Bazaar</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="65"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="64"
+                              />64
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              20 January 2027
+                            </td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Eco-Friendly Workshop</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="64"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="63"
+                              />63
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              7 December 2026
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span>
+                            </td>
+                            <td>Open Air Theatre</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="63"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="62"
+                              />62
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              12 November 2026
+                            </td>
+                            <td><span class="badge bg-danger">Paused</span></td>
+                            <td>Sunset Beach Picnic</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="62"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="61"
+                              />61
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              5 October 2026
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span>
+                            </td>
+                            <td>Farmers Market Visit</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="61"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="60"
+                              />60
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              10 September 2026
+                            </td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Trivia &amp; Games Night</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="60"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="59"
+                              />59
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              30 August 2026
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span>
+                            </td>
+                            <td>Music Jam Session</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="59"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="58"
+                              />58
+                            </td>
+                            <td class="dt-type-date sorting_1">15 July 2026</td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Mindfulness Workshop</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="58"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="57"
+                              />57
+                            </td>
+                            <td class="dt-type-date sorting_1">20 June 2026</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span>
+                            </td>
+                            <td>Hiking Meetup</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="57"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="56"
+                              />56
+                            </td>
+                            <td class="dt-type-date sorting_1">27 May 2026</td>
+                            <td><span class="badge bg-danger">Paused</span></td>
+                            <td>Street Art Walk</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="56"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="55"
+                              />55
+                            </td>
+                            <td class="dt-type-date sorting_1">5 April 2026</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span>
+                            </td>
+                            <td>Pet Lovers Social</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="55"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="54"
+                              />54
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              13 March 2026
+                            </td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Cultural Food Fest</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="54"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="53"
+                              />53
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              18 February 2026
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span>
+                            </td>
+                            <td>Picnic in the Park</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="53"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="52"
+                              />52
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              9 January 2026
+                            </td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Beach Volleyball Meetup</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="52"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="51"
+                              />51
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              15 December 2025
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span>
+                            </td>
+                            <td>River Kayak Adventure</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="51"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="50"
+                              />50
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              22 November 2025
+                            </td>
+                            <td><span class="badge bg-danger">Paused</span></td>
+                            <td>Weekend Market Stroll</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="50"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="49"
+                              />49
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              3 October 2025
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span>
+                            </td>
+                            <td>DJs &amp; Dancing Night</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="49"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="48"
+                              />48
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              14 September 2025
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span>
+                            </td>
+                            <td>Cooking Class Evening</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="48"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="47"
+                              />47
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              30 August 2025
+                            </td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Charity Bake-Off</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="47"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="46"
+                              />46
+                            </td>
+                            <td class="dt-type-date sorting_1">20 July 2025</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span>
+                            </td>
+                            <td>Boardwalk Sunset Meetup</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="46"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="45"
+                              />45
+                            </td>
+                            <td class="dt-type-date sorting_1">4 June 2025</td>
+                            <td><span class="badge bg-danger">Paused</span></td>
+                            <td>Botanical Garden Stroll</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="45"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="44"
+                              />44
+                            </td>
+                            <td class="dt-type-date sorting_1">13 May 2025</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span>
+                            </td>
+                            <td>Wine &amp; Cheese Pairing</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="44"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="43"
+                              />43
+                            </td>
+                            <td class="dt-type-date sorting_1">7 April 2025</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span>
+                            </td>
+                            <td>Outdoor Film Fest</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="43"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="42"
+                              />42
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              11 March 2025
+                            </td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Open Water Swim</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="42"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="41"
+                              />41
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              18 February 2025
+                            </td>
+                            <td><span class="badge bg-danger">Paused</span></td>
+                            <td>Art Workshop</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="41"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="40"
+                              />40
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              8 January 2025
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span>
+                            </td>
+                            <td>Spring Garden Tour</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="40"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="39"
+                              />39
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              2 December 2024
+                            </td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Film Screening</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="39"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="38"
+                              />38
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              9 November 2024
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span>
+                            </td>
+                            <td>Paint &amp; Sip Event</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="38"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="37"
+                              />37
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              6 October 2024
+                            </td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Language Exchange Night</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="37"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="36"
+                              />36
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              12 September 2024
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span>
+                            </td>
+                            <td>Sunrise Yoga Session</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="36"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="35"
+                              />35
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              3 August 2024
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span>
+                            </td>
+                            <td>Book Club Gathering</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="35"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="34"
+                              />34
+                            </td>
+                            <td class="dt-type-date sorting_1">25 July 2024</td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Cycling Adventure</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="34"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="33"
+                              />33
+                            </td>
+                            <td class="dt-type-date sorting_1">18 June 2024</td>
+                            <td><span class="badge bg-danger">Paused</span></td>
+                            <td>Coffee and Code Meetup</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="33"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="32"
+                              />32
+                            </td>
+                            <td class="dt-type-date sorting_1">7 May 2024</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span>
+                            </td>
+                            <td>Forest Meditation Retreat</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="32"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="31"
+                              />31
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              10 April 2024
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span>
+                            </td>
+                            <td>Sailing Regatta</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="31"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="30"
+                              />30
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              22 March 2024
+                            </td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Swing Dance Social</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="30"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="29"
+                              />29
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              14 February 2024
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span>
+                            </td>
+                            <td>Photography Walk</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="29"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="28"
+                              />28
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              5 January 2024
+                            </td>
+                            <td><span class="badge bg-danger">Paused</span></td>
+                            <td>Yoga &amp; Wellness Retreat</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="28"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="27"
+                              />27
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              8 December 2023
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span>
+                            </td>
+                            <td>Board Game Night</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="27"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="26"
+                              />26
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              17 November 2023
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span>
+                            </td>
+                            <td>Eco Workshop</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="26"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="16"
+                              />16
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              20 October 2023
+                            </td>
+                            <td><span class="badge bg-danger">Paused</span></td>
+                            <td>Cocktail Drinks Social Night</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="16"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="25"
+                              />25
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              3 October 2023
+                            </td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Foodie Feast</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="25"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="24"
+                              />24
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              15 September 2023
+                            </td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Comedy Improv Show</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="24"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="23"
+                              />23
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              20 August 2023
+                            </td>
+                            <td><span class="badge bg-danger">Paused</span></td>
+                            <td>Trivia &amp; Karaoke</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="23"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="22"
+                              />22
+                            </td>
+                            <td class="dt-type-date sorting_1">12 July 2023</td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span>
+                            </td>
+                            <td>Open Mic Night</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="22"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="21"
+                              />21
+                            </td>
+                            <td class="dt-type-date sorting_1">1 June 2023</td>
+                            <td>
+                              <span class="badge bg-danger">Expired</span>
+                            </td>
+                            <td>Sunset Wine Tasting</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="21"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="20"
+                              />20
+                            </td>
+                            <td class="dt-type-date sorting_1">25 May 2023</td>
+                            <td>
+                              <span class="badge bg-danger">Deleted</span>
+                            </td>
+                            <td>Vintage Dress Gala</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="20"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="19"
+                              />19
+                            </td>
+                            <td class="dt-type-date sorting_1">5 April 2023</td>
+                            <td>
+                              <span class="badge bg-success">Active</span>
+                            </td>
+                            <td>Coastal BBQ Social</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="19"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input
+                                type="checkbox"
+                                class="me-3"
+                                value="18"
+                              />18
+                            </td>
+                            <td class="dt-type-date sorting_1">
+                              15 March 2023
+                            </td>
+                            <td>
+                              <span class="badge bg-danger">Pending</span>
+                            </td>
+                            <td>Melbourne Jazz Night</td>
+                            <td>
+                              <a
+                                href="/admin/events/add-sponsored-ad"
+                                class="ms-3 btn btn-primary add small py-0 px-2"
+                                data-item-id="18"
+                                ><i class="gigacon gigacon-plus-sign me-1"></i
+                                >Select</a
+                              >
+                            </td>
+                          </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="row mt-2 justify-content-between">
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-start col-md-auto me-auto"
+                    >
+                      <div
+                        class="dt-info"
+                        aria-live="polite"
+                        id="DataTables_Table_1_info"
+                        role="status"
+                      >
+                        Showing 1 to 50 of 56 entries
+                      </div>
+                    </div>
+                    <div
+                      class="d-md-flex justify-content-between align-items-center dt-layout-end col-md-auto ms-auto"
+                    >
+                      <div class="dt-paging">
+                        <nav aria-label="pagination">
+                          <ul class="pagination">
+                            <li class="dt-paging-button page-item disabled">
+                              <button
+                                class="page-link first"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_1"
+                                aria-disabled="true"
+                                aria-label="First"
+                                data-dt-idx="first"
+                                tabindex="-1"
+                              >
+                                «
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item disabled">
+                              <button
+                                class="page-link previous"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_1"
+                                aria-disabled="true"
+                                aria-label="Previous"
+                                data-dt-idx="previous"
+                                tabindex="-1"
+                              >
+                                ‹
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item active">
+                              <button
+                                class="page-link"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_1"
+                                aria-current="page"
+                                data-dt-idx="0"
+                              >
+                                1
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item">
+                              <button
+                                class="page-link"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_1"
+                                data-dt-idx="1"
+                              >
+                                2
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item">
+                              <button
+                                class="page-link next"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_1"
+                                aria-label="Next"
+                                data-dt-idx="next"
+                              >
+                                ›
+                              </button>
+                            </li>
+                            <li class="dt-paging-button page-item">
+                              <button
+                                class="page-link last"
+                                role="link"
+                                type="button"
+                                aria-controls="DataTables_Table_1"
+                                aria-label="Last"
+                                data-dt-idx="last"
+                              >
+                                »
+                              </button>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

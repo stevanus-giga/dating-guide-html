@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dating Guide Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="app" data-v-app="">
+      <header
+        class="navbar position-fixed bg-white flex-md-nowrap p-0 border-bottom w-100 z-2"
+      >
+        <a href="/admin" class="router-link-active navbar-brand"
+          ><img src="/assets/images/logo.png" class="ms-2" alt="Logo"
+        /></a>
+        <ul class="navbar-nav flex-row d-lg-none">
+          <li class="nav-item text-nowrap">
+            <button
+              class="nav-link px-3"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#sidebarMenu"
+              aria-controls="sidebarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="gigacon gigacon-hamburger"></i>
+            </button>
+          </li>
+        </ul>
+      </header>
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="h-100 sidebar border border-right col-lg-2 p-0 bg-body-tertiary"
+          >
+            <div
+              class="offcanvas-lg offcanvas-end bg-body-tertiary overflow-y-auto h-100"
+              tabindex="-1"
+              id="sidebarMenu"
+              aria-labelledby="sidebarMenuLabel"
+            >
+              <div class="offcanvas-header">
+                <img src="/assets/images/logo.png" alt="Logo" /><button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  data-bs-target="#sidebarMenu"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div
+                class="mt-lg-5 offcanvas-body d-lg-flex flex-column p-0 pt-lg-3"
+              >
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#dashboard-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-heart-double me-2"></i
+                        >Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="dashboard-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a
+                            href="/admin/events"
+                            class="router-link-active router-link-exact-active nav-link link-dark"
+                            aria-current="page"
+                            >Edit Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Events
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >3</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/add-event-for-member"
+                            class="nav-link link-dark"
+                            >Add Event for Member</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/sponsored-ads"
+                            class="nav-link link-dark"
+                            >Sponsored Ads</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/homepage-events"
+                            class="nav-link link-dark"
+                            >Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/dg-homepage-events"
+                            class="nav-link link-dark"
+                            >DG Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/logins"
+                            class="nav-link link-dark"
+                            >Logins</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#travel-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-star-double me-2"></i>Travel
+                        Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="travel-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/travel" class="nav-link link-dark"
+                            >Travel Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/sponsored-ads.html"
+                            class="nav-link link-dark"
+                            >Travel SponsoredAds</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/pending-events"
+                            class="nav-link link-dark"
+                            >Travel Events Pending
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#clubs-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-wink-mutual me-2"></i
+                        >Clubs</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="clubs-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/clubs" class="nav-link link-dark"
+                            >Clubs</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/clubs/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Clubs
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#mail-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-envelope me-2"></i>Mail</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="mail-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/mail" class="nav-link link-dark"
+                            >Pending Mail</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <hr class="my-3" />
+                <ul class="nav flex-column mt-auto">
+                  <li class="nav-item">
+                    <a
+                      href="/"
+                      class="nav-link link-dark d-flex align-items-center gap-2"
+                      ><i class="gigacon gigacon-log-out"></i> Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <main class="col-lg-9 ms-sm-auto col-lg-10 px-md-4 my-5">
+            <div class="mx-auto container mx-auto py-3 mt-4">
+              <h1 class="h2 font-bold">Mail</h1>
+              <div class="d-flex">
+                <!--v-if--><!--v-if--><!--v-if-->
+                <div class="mb-3">
+                  <label
+                    for="search"
+                    class="block mb-2 small fw-medium text-gray-900"
+                    >Search</label
+                  ><!--v-if--><select id="search" class="form-select">
+                    <option value="Mail Unresponded to">
+                      Mail Unresponded to
+                    </option>
+                    <option value="Marked as Don't Respond">
+                      Marked as Don't Respond
+                    </option>
+                    <option value="Mail Responded to">Mail Responded to</option>
+                    <option value="Spam">Spam</option>
+                  </select>
+                </div>
+                <!--v-if--><!--v-if--><!--v-if-->
+              </div>
+              <ul class="nav nav-underline mb-3" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-dark active"
+                    id="general-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#general-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="general-tab-pane"
+                    aria-selected="true"
+                  >
+                    General Inquiries<span class="badge text-bg-secondary ms-1"
+                      >89236</span
+                    >
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-dark"
+                    id="ads-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#ads-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="ads-tab-pane"
+                    aria-selected="false"
+                  >
+                    Advertising Inquiries<span
+                      class="badge text-bg-secondary ms-1"
+                      >1</span
+                    >
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-dark"
+                    id="suggestion-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#suggestion-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="suggestion-tab-pane"
+                    aria-selected="false"
+                  >
+                    Suggestion Feedback<span
+                      class="badge text-bg-secondary ms-1"
+                      >2</span
+                    >
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-dark"
+                    id="complaints-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#complaints-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="complaints-tab-pane"
+                    aria-selected="false"
+                  >
+                    Complaints<span class="badge text-bg-secondary ms-1"
+                      >0</span
+                    >
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-dark"
+                    id="login-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#login-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="login-tab-pane"
+                    aria-selected="false"
+                  >
+                    Login Inquires<span class="badge text-bg-secondary ms-1"
+                      >0</span
+                    >
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link text-dark"
+                    id="other-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#other-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="other-tab-pane"
+                    aria-selected="false"
+                  >
+                    Other Inquiries<span class="badge text-bg-secondary ms-1"
+                      >1</span
+                    >
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div
+                  class="tab-pane fade show active"
+                  id="general-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="general-tab"
+                  tabindex="0"
+                >
+                  <table
+                    class="table auto table-striped table-bordered mail-table"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Message</th>
+                        <th class="d-none d-lg-table-cell">Reply</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From: <span class="fw-bold">Martin Kat</span></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >manager@sensualball.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 8 May 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold"
+                            >user email and password</span
+                          >
+                          <p>
+                            Very sorry but we have used this site to submit our
+                            Sensual Ball event on 10th June (we think) and now
+                            want to edit the words but our usual email addresses
+                            and passwords do not work (@sensual.com.au
+                            @sensualball.com) Please can you sen the password to
+                            the registered email address and we'll work it out
+                            from there. I am pretty sure we put the event in
+                            ourselves but this system is pretty new. Regards and
+                            sorr for the time wasting Martin &amp; Kat
+                            www.sensualball.com
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-general-1"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-general-1"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-general-1"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-general-1"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From: <span class="fw-bold">Martin Kat</span></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >manager@sensualball.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 8 May 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold"
+                            >user email and password</span
+                          >
+                          <p>
+                            Very sorry but we have used this site to submit our
+                            Sensual Ball event on 10th June (we think) and now
+                            want to edit the words but our usual email addresses
+                            and passwords do not work (@sensual.com.au
+                            @sensualball.com) Please can you sen the password to
+                            the registered email address and we'll work it out
+                            from there. I am pretty sure we put the event in
+                            ourselves but this system is pretty new. Regards and
+                            sorr for the time wasting Martin &amp; Kat
+                            www.sensualball.com
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-general-2"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-general-2"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-general-2"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-general-2"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From: <span class="fw-bold">Martin Kat</span></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >manager@sensualball.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 8 May 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold"
+                            >user email and password</span
+                          >
+                          <p>
+                            Very sorry but we have used this site to submit our
+                            Sensual Ball event on 10th June (we think) and now
+                            want to edit the words but our usual email addresses
+                            and passwords do not work (@sensual.com.au
+                            @sensualball.com) Please can you sen the password to
+                            the registered email address and we'll work it out
+                            from there. I am pretty sure we put the event in
+                            ourselves but this system is pretty new. Regards and
+                            sorr for the time wasting Martin &amp; Kat
+                            www.sensualball.com
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-general-3"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-general-3"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-general-3"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-general-3"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From: <span class="fw-bold">Martin Kat</span></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >manager@sensualball.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 8 May 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold"
+                            >user email and password</span
+                          >
+                          <p>
+                            Very sorry but we have used this site to submit our
+                            Sensual Ball event on 10th June (we think) and now
+                            want to edit the words but our usual email addresses
+                            and passwords do not work (@sensual.com.au
+                            @sensualball.com) Please can you sen the password to
+                            the registered email address and we'll work it out
+                            from there. I am pretty sure we put the event in
+                            ourselves but this system is pretty new. Regards and
+                            sorr for the time wasting Martin &amp; Kat
+                            www.sensualball.com
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-general-4"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-general-4"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-general-4"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-general-4"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From: <span class="fw-bold">Martin Kat</span></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >manager@sensualball.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 8 May 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold"
+                            >user email and password</span
+                          >
+                          <p>
+                            Very sorry but we have used this site to submit our
+                            Sensual Ball event on 10th June (we think) and now
+                            want to edit the words but our usual email addresses
+                            and passwords do not work (@sensual.com.au
+                            @sensualball.com) Please can you sen the password to
+                            the registered email address and we'll work it out
+                            from there. I am pretty sure we put the event in
+                            ourselves but this system is pretty new. Regards and
+                            sorr for the time wasting Martin &amp; Kat
+                            www.sensualball.com
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-general-5"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-general-5"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-general-5"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-general-5"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From: <span class="fw-bold">Martin Kat</span></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >manager@sensualball.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 8 May 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold"
+                            >user email and password</span
+                          >
+                          <p>
+                            Very sorry but we have used this site to submit our
+                            Sensual Ball event on 10th June (we think) and now
+                            want to edit the words but our usual email addresses
+                            and passwords do not work (@sensual.com.au
+                            @sensualball.com) Please can you sen the password to
+                            the registered email address and we'll work it out
+                            from there. I am pretty sure we put the event in
+                            ourselves but this system is pretty new. Regards and
+                            sorr for the time wasting Martin &amp; Kat
+                            www.sensualball.com
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-general-6"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-general-6"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-general-6"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-general-6"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From: <span class="fw-bold">Martin Kat</span></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >manager@sensualball.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 8 May 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold"
+                            >user email and password</span
+                          >
+                          <p>
+                            Very sorry but we have used this site to submit our
+                            Sensual Ball event on 10th June (we think) and now
+                            want to edit the words but our usual email addresses
+                            and passwords do not work (@sensual.com.au
+                            @sensualball.com) Please can you sen the password to
+                            the registered email address and we'll work it out
+                            from there. I am pretty sure we put the event in
+                            ourselves but this system is pretty new. Regards and
+                            sorr for the time wasting Martin &amp; Kat
+                            www.sensualball.com
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-general-7"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-general-7"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-general-7"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-general-7"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From: <span class="fw-bold">Martin Kat</span></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >manager@sensualball.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 8 May 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold"
+                            >user email and password</span
+                          >
+                          <p>
+                            Very sorry but we have used this site to submit our
+                            Sensual Ball event on 10th June (we think) and now
+                            want to edit the words but our usual email addresses
+                            and passwords do not work (@sensual.com.au
+                            @sensualball.com) Please can you sen the password to
+                            the registered email address and we'll work it out
+                            from there. I am pretty sure we put the event in
+                            ourselves but this system is pretty new. Regards and
+                            sorr for the time wasting Martin &amp; Kat
+                            www.sensualball.com
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-general-8"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-general-8"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-general-8"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-general-8"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From: <span class="fw-bold">Martin Kat</span></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >manager@sensualball.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 8 May 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold"
+                            >user email and password</span
+                          >
+                          <p>
+                            Very sorry but we have used this site to submit our
+                            Sensual Ball event on 10th June (we think) and now
+                            want to edit the words but our usual email addresses
+                            and passwords do not work (@sensual.com.au
+                            @sensualball.com) Please can you sen the password to
+                            the registered email address and we'll work it out
+                            from there. I am pretty sure we put the event in
+                            ourselves but this system is pretty new. Regards and
+                            sorr for the time wasting Martin &amp; Kat
+                            www.sensualball.com
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-general-9"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-general-9"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-general-9"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-general-9"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From: <span class="fw-bold">Martin Kat</span></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >manager@sensualball.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 8 May 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold"
+                            >user email and password</span
+                          >
+                          <p>
+                            Very sorry but we have used this site to submit our
+                            Sensual Ball event on 10th June (we think) and now
+                            want to edit the words but our usual email addresses
+                            and passwords do not work (@sensual.com.au
+                            @sensualball.com) Please can you sen the password to
+                            the registered email address and we'll work it out
+                            from there. I am pretty sure we put the event in
+                            ourselves but this system is pretty new. Regards and
+                            sorr for the time wasting Martin &amp; Kat
+                            www.sensualball.com
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-general-10"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-general-10"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-general-10"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-general-10"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div
+                    class="d-flex flex-wrap align-items-center justify-content-between gap-3"
+                  >
+                    <div class="d-flex flex-wrap gap-2">
+                      <button type="submit" class="btn btn-primary text-center">
+                        Submit: Replies are Emailed and show next messages</button
+                      ><button type="button" class="btn btn-danger text-center">
+                        Move All to Spam folder
+                      </button>
+                    </div>
+                    <nav aria-label="...">
+                      <ul class="pagination mb-0">
+                        <li class="page-item disabled">
+                          <a
+                            class="page-link"
+                            href="#"
+                            tabindex="-1"
+                            aria-disabled="true"
+                            >Previous</a
+                          >
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item active" aria-current="page">
+                          <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">Next</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="ads-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="ads-tab"
+                  tabindex="0"
+                >
+                  <table
+                    class="table auto table-striped table-bordered mail-table"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Message</th>
+                        <th class="d-none d-lg-table-cell">Reply</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From:
+                            <span class="fw-bold"
+                              >Hansaka Dissanayaka</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >hansaka1986@yahoo.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 27 April 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold">Need good partner</span>
+                          <p>
+                            I am from Sri Lanka,I neeed lifetimepartner to marry
+                            in canada,I am going to Canda next year so I need a
+                            good ,honest partner,but I dont know how to find
+                            that person please helpme to find him from Canada.I
+                            am 24y,faire hansome guy.
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-ads-1"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-ads-1"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-ads-1"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-ads-1"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="p-3">
+                          <span class="d-block text-success"
+                            >From:
+                            <span class="fw-bold"
+                              >Hansaka Dissanayaka</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Email:
+                            <span class="fw-bold"
+                              >hansaka1986@yahoo.com</span
+                            ></span
+                          ><span class="d-block text-success"
+                            >Message Date:
+                            <span class="fw-bold"
+                              >Tuesday, 27 April 2024</span
+                            ></span
+                          >
+                          <hr />
+                          <span class="d-block fw-bold">Need good partner</span>
+                          <p>
+                            I am from Sri Lanka,I neeed lifetimepartner to marry
+                            in canada,I am going to Canda next year so I need a
+                            good ,honest partner,but I dont know how to find
+                            that person please helpme to find him from Canada.I
+                            am 24y,faire hansome guy.
+                          </p>
+                          <div class="d-block d-lg-none">
+                            <span class="d-block fw-bold">Reply</span
+                            ><!--v-if--><!--v-if-->
+                            <div class="mb-2 mt-3">
+                              <!--v-if--><textarea
+                                rows="7"
+                                class="form-control"
+                              ></textarea
+                              ><!--v-if-->
+                            </div>
+                            <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div
+                              class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary text-center"
+                              >
+                                Reply</button
+                              ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                              <div class="">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="dontReply-mob-ads-2"
+                                  /><label
+                                    class="form-check-label small"
+                                    for="dontReply-mob-ads-2"
+                                    >Don't Reply</label
+                                  >
+                                </div>
+                              </div>
+                              <!--v-if--><!--v-if-->
+                            </div>
+                          </div>
+                        </td>
+                        <td class="p-3 d-none d-lg-table-cell">
+                          <!--v-if--><!--v-if-->
+                          <div class="mb-2 mt-3">
+                            <!--v-if--><textarea
+                              rows="7"
+                              class="form-control"
+                            ></textarea
+                            ><!--v-if-->
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div
+                            class="d-flex align-items-center my-3 gap-3 justify-content-between"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary text-center"
+                            >
+                              Reply</button
+                            ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                            <div class="">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="dontReply-ads-2"
+                                /><label
+                                  class="form-check-label small"
+                                  for="dontReply-ads-2"
+                                  >Don't Reply</label
+                                >
+                              </div>
+                            </div>
+                            <!--v-if--><!--v-if-->
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div
+                    class="d-flex flex-wrap align-items-center justify-content-between gap-3"
+                  >
+                    <div class="d-flex flex-wrap gap-2">
+                      <button type="submit" class="btn btn-primary text-center">
+                        Submit: Replies are Emailed and show next messages</button
+                      ><button type="button" class="btn btn-danger text-center">
+                        Move All to Spam folder
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="suggestion-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="suggestion-tab"
+                  tabindex="0"
+                >
+                  ...
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="complaints-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="complaints-tab"
+                  tabindex="0"
+                >
+                  ...
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="login-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="login-tab"
+                  tabindex="0"
+                >
+                  ...
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="other-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="other-tab"
+                  tabindex="0"
+                >
+                  ...
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dating Guide Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="app" data-v-app="">
+      <header
+        class="navbar position-fixed bg-white flex-md-nowrap p-0 border-bottom w-100 z-2"
+      >
+        <a href="/admin" class="router-link-active navbar-brand"
+          ><img src="/assets/images/logo.png" class="ms-2" alt="Logo"
+        /></a>
+        <ul class="navbar-nav flex-row d-lg-none">
+          <li class="nav-item text-nowrap">
+            <button
+              class="nav-link px-3"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#sidebarMenu"
+              aria-controls="sidebarMenu"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="gigacon gigacon-hamburger"></i>
+            </button>
+          </li>
+        </ul>
+      </header>
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="h-100 sidebar border border-right col-lg-2 p-0 bg-body-tertiary"
+          >
+            <div
+              class="offcanvas-lg offcanvas-end bg-body-tertiary overflow-y-auto h-100"
+              tabindex="-1"
+              id="sidebarMenu"
+              aria-labelledby="sidebarMenuLabel"
+            >
+              <div class="offcanvas-header">
+                <img src="/assets/images/logo.png" alt="Logo" /><button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  data-bs-target="#sidebarMenu"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div
+                class="mt-lg-5 offcanvas-body d-lg-flex flex-column p-0 pt-lg-3"
+              >
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#dashboard-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-heart-double me-2"></i
+                        >Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="dashboard-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a
+                            href="/admin/events"
+                            class="router-link-active router-link-exact-active nav-link link-dark"
+                            aria-current="page"
+                            >Edit Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Events
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >3</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/add-event-for-member"
+                            class="nav-link link-dark"
+                            >Add Event for Member</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/sponsored-ads"
+                            class="nav-link link-dark"
+                            >Sponsored Ads</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/homepage-events"
+                            class="nav-link link-dark"
+                            >Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/dg-homepage-events"
+                            class="nav-link link-dark"
+                            >DG Home Page Listings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/events/logins"
+                            class="nav-link link-dark"
+                            >Logins</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#travel-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-star-double me-2"></i>Travel
+                        Events</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="travel-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/travel" class="nav-link link-dark"
+                            >Travel Events</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/sponsored-ads.html"
+                            class="nav-link link-dark"
+                            >Travel SponsoredAds</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/travel/pending-events"
+                            class="nav-link link-dark"
+                            >Travel Events Pending
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#clubs-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-wink-mutual me-2"></i
+                        >Clubs</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="clubs-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/clubs" class="nav-link link-dark"
+                            >Clubs</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="/admin/clubs/pending-events"
+                            class="nav-link link-dark"
+                            >Pending Clubs
+                            <span
+                              class="badge rounded-circle text-bg-primary ms-1"
+                              >0</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <button
+                      class="nav-link btn btn-toggle align-items-center rounded w-100 d-flex justify-content-between link-dark"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#mail-collapse"
+                      aria-expanded="true"
+                    >
+                      <span
+                        ><i class="gigacon gigacon-envelope me-2"></i>Mail</span
+                      ><i class="gigacon gigacon-chevron-down"></i>
+                    </button>
+                    <div class="collapse show" id="mail-collapse" style="">
+                      <ul
+                        class="btn-toggle-nav nav-link list-unstyled fw-normal py-1 small"
+                      >
+                        <li>
+                          <a href="/admin/mail" class="nav-link link-dark"
+                            >Pending Mail</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <hr class="my-3" />
+                <ul class="nav flex-column mt-auto">
+                  <li class="nav-item">
+                    <a
+                      href="/"
+                      class="nav-link link-dark d-flex align-items-center gap-2"
+                      ><i class="gigacon gigacon-log-out"></i> Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <main class="col-lg-9 ms-sm-auto col-lg-10 px-md-4 my-5">
+            <div class="container mx-auto py-3 mt-4">
+              <div class="row g-5">
+                <div class="col-12 col-lg-8">
+                  <form action="" method="post" class="">
+                    <div class="mb-3">
+                      <h1 class="mb-0 fw-bold h2">Submit a Club</h1>
+                    </div>
+                    <div class="mb-3">
+                      <div class="mb-2">
+                        <h2 class="fw-bold h4">Listing type</h2>
+                      </div>
+                      <div class="bg-gray p-4">
+                        <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                        <div class="">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              id="event-1"
+                              value="1"
+                            /><label
+                              class="form-check-label small"
+                              for="event-1"
+                              >Short Listing (only club listing displayed, club
+                              website is required).</label
+                            >
+                          </div>
+                        </div>
+                        <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                        <div class="">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              id="event-2"
+                              value="2"
+                            /><label
+                              class="form-check-label small"
+                              for="event-2"
+                              >Full Details (club listing and club details
+                              displayed).</label
+                            >
+                          </div>
+                        </div>
+                        <!--v-if-->
+                      </div>
+                    </div>
+                    <h2 class="h4 fw-bold mb-3">Club Listing</h2>
+                    <div class="mb-3">
+                      <label for="clubName" class="form-label small fw-medium"
+                        >Club Name*</label
+                      ><input
+                        type="text"
+                        id="clubName"
+                        class="form-control"
+                        required=""
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <span class="d-block mb-2 fw-medium">Club Type*</span>
+                      <div class="d-flex gap-3 align-items-center">
+                        <div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="adlut"
+                              /><label
+                                class="form-check-label small"
+                                for="adlut"
+                                >Adult for Men &amp; Women</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="gay"
+                              /><label class="form-check-label small" for="gay"
+                                >Gay</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="lesbian"
+                              /><label
+                                class="form-check-label small"
+                                for="lesbian"
+                                >Lesbian</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="singles"
+                              /><label
+                                class="form-check-label small"
+                                for="singles"
+                                >Singles</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="swingers"
+                              /><label
+                                class="form-check-label small"
+                                for="swingers"
+                                >Swingers</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if-->
+                        </div>
+                        <div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="fetish"
+                              /><label
+                                class="form-check-label small"
+                                for="fetish"
+                                >Fetish</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="glb"
+                              /><label class="form-check-label small" for="glb"
+                                >Gay &amp; Lesbian</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="pubs"
+                              /><label class="form-check-label small" for="pubs"
+                                >Pubs, Nightclubs &amp; Music</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="soc"
+                              /><label class="form-check-label small" for="soc"
+                                >Social Clubs</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                          <div class="">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="wo"
+                              /><label class="form-check-label small" for="wo"
+                                >Women Only</label
+                              >
+                            </div>
+                          </div>
+                          <!--v-if--><!--v-if-->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="service" class="form-label small fw-medium"
+                        >Service*</label
+                      ><input
+                        type="text"
+                        id="service"
+                        class="form-control"
+                        placeholder="(Example: Swingers Parties)"
+                        required=""
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <label
+                        for="disLocation"
+                        class="form-label small fw-medium"
+                        >Display location*</label
+                      ><input
+                        type="text"
+                        id="disLocation"
+                        class="form-control"
+                        required=""
+                      />
+                      <p class="form-text fst-italic">
+                        (Full address is optional, minimum required is City or
+                        Town)
+                      </p>
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <label
+                        for="gmapLocation"
+                        class="form-label small fw-medium"
+                        >Google Map location</label
+                      ><input
+                        type="text"
+                        id="gmapLocation"
+                        class="form-control"
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <div class="row">
+                        <div class="col-6">
+                          <!--v-if--><!--v-if--><!--v-if-->
+                          <div class="w-100">
+                            <label
+                              for="states"
+                              class="block mb-2 small fw-medium text-gray-900"
+                              >State*</label
+                            ><!--v-if--><select
+                              id="states"
+                              required=""
+                              class="form-select"
+                            >
+                              <option value="New South Wales">NSW</option>
+                              <option value="Victoria">VIC</option>
+                              <option value="South Australia">SA</option>
+                              <option value="Northern Territory">NT</option>
+                              <option value="Queensland">QLD</option>
+                              <option value="Australian Capital Territory">
+                                ACT
+                              </option>
+                              <option value="Western Australia">WA</option>
+                              <option value="Tasmania">TAS</option>
+                            </select>
+                          </div>
+                          <!--v-if--><!--v-if--><!--v-if-->
+                        </div>
+                        <div class="col-6">
+                          <label for="suburbs" class="form-label fw-medium"
+                            >Nearest Region*</label
+                          >
+                          <div class="ajax-select position-relative">
+                            <input
+                              type="text"
+                              id="suburbs"
+                              class="form-control"
+                              required=""
+                            /><!--v-if-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <label
+                        for="listingDesc"
+                        class="form-label small fw-medium"
+                        >Listing Description*</label
+                      ><textarea
+                        rows="3"
+                        id="listingDesc"
+                        required=""
+                        class="form-control"
+                      ></textarea
+                      ><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <label for="website" class="form-label small fw-medium"
+                        >Website</label
+                      ><input
+                        type="text"
+                        id="website"
+                        class="form-control"
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div>
+                      <hr class="border-2 mb-3" />
+                      <h2 class="h4 fw-bold mb-3">Full Details</h2>
+                      <!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label for="contact" class="form-label small fw-medium"
+                          >Contact</label
+                        ><textarea
+                          rows="2"
+                          id="contact"
+                          class="form-control"
+                        ></textarea
+                        ><!--v-if-->
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label for="email" class="form-label small fw-medium"
+                          >Email</label
+                        ><input
+                          type="email"
+                          id="email"
+                          class="form-control"
+                        /><!--v-if-->
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label
+                          for="detailheader"
+                          class="form-label small fw-medium"
+                          >Details Header*</label
+                        ><textarea
+                          rows="3"
+                          id="detailheader"
+                          required=""
+                          class="form-control"
+                        ></textarea
+                        ><!--v-if-->
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="mb-3">
+                        <label
+                          for="detaildesc"
+                          class="form-label small fw-medium"
+                          >Details Description*</label
+                        ><textarea
+                          rows="8"
+                          id="detaildesc"
+                          required=""
+                          class="form-control"
+                        ></textarea
+                        ><!--v-if-->
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    </div>
+                    <hr class="border-2 mb-3" />
+                    <div class="mb-3">
+                      <span class="d-block mb-2 fw-medium">Display on:</span
+                      ><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="ammsite"
+                            value="AdultMatchMaker.com.au"
+                          /><label class="form-check-label small" for="ammsite"
+                            >AdultMatchMaker.com.au</label
+                          >
+                        </div>
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="gmmsite"
+                            value="GayMatchMaker.com.au"
+                          /><label class="form-check-label small" for="gmmsite"
+                            >GayMatchMaker.com.au</label
+                          >
+                        </div>
+                      </div>
+                      <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      <div class="">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="lmmsite"
+                            value="LesbianMatchMaker.com.au"
+                          /><label class="form-check-label small" for="lmmsite"
+                            >LesbianMatchMaker.com.au</label
+                          >
+                        </div>
+                      </div>
+                      <!--v-if--><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <!--v-if--><!--v-if--><label
+                        class="form-label small fw-medium"
+                        for="listimg"
+                        >Listing Image*</label
+                      ><input
+                        class="form-control"
+                        id="listimg"
+                        type="file"
+                        accept="image/jpeg, image/jpg, image/gif"
+                        required=""
+                      />
+                      <div class="form-text" id="listimg_help">
+                        (image height:85, width:135, format: gif or jpeg)
+                      </div>
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <!--v-if--><!--v-if--><label
+                        class="form-label small fw-medium"
+                        for="detailimg"
+                        >Details image (Optional)</label
+                      ><input
+                        class="form-control"
+                        id="detailimg"
+                        type="file"
+                        accept="image/jpeg, image/jpg, image/gif"
+                      />
+                      <div class="form-text" id="detailimg_help">
+                        (max height:400px, max width:563px, format: gif or jpeg
+                      </div>
+                    </div>
+                    <div class="d-flex gap-3 justify-content-end">
+                      <a href="/admin/clubs" class="btn text-center">Cancel</a
+                      ><button
+                        type="submit"
+                        class="btn btn-primary text-center"
+                      >
+                        Submit Club
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
