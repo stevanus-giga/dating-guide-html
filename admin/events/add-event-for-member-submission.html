@@ -1377,7 +1377,12 @@
                         href="/admin/events/add-event-for-member"
                         class="btn text-center"
                         >Cancel</a
-                      ><button type="button" class="btn text-center">
+                      ><button
+                        type="button"
+                        class="btn text-center"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                      >
                         Preview</button
                       ><button
                         type="submit"
@@ -1391,6 +1396,53 @@
               </div>
             </div>
           </main>
+        </div>
+      </div>
+
+      <div
+        class="modal"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby=""
+        aria-modal="true"
+        role="dialog"
+      >
+        <div class="modal-dialog" style="max-width: 800px">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Event Listing Preview
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="">
+                <div class="mb-3">
+                  <img
+                    src="https://placehold.co/500x150"
+                    class="w-100 mb-3"
+                    alt=""
+                  /><!--v-if--><small class="d-block fw-bold mb-3"
+                    >Wednesday, 27 November 2024
+                    <!--v-if--></small
+                  ><!--v-if--><!--v-if-->
+                  <div class="table-responsive mt-3">
+                    <table class="table auto">
+                      <tbody>
+                        <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--v-if-->
+          </div>
         </div>
       </div>
     </div>

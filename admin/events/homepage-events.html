@@ -435,6 +435,8 @@
                                 href="#"
                                 class="ms-3 text-dark text-decoration-none edit"
                                 data-item-id="11"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
                                 ><i class="gigacon gigacon-edit me-1"></i
                                 >Edit</a
                               >
@@ -461,6 +463,8 @@
                               <a
                                 href="#"
                                 class="ms-3 text-dark text-decoration-none edit"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
                                 data-item-id="12"
                                 ><i class="gigacon gigacon-edit me-1"></i
                                 >Edit</a
@@ -488,6 +492,8 @@
                               <a
                                 href="#"
                                 class="ms-3 text-dark text-decoration-none edit"
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
                                 data-item-id="13"
                                 ><i class="gigacon gigacon-edit me-1"></i
                                 >Edit</a
@@ -681,6 +687,84 @@
               </div>
             </div>
           </main>
+        </div>
+
+        <div
+          class="modal"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby=""
+          aria-modal="true"
+          role="dialog"
+        >
+          <div class="modal-dialog" style="">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Edit - Newcastle Couples Meet &amp; Greet NSW 1
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-lg-9">
+                    <div class="mb-3">
+                      <label for="title" class="form-label small fw-medium"
+                        >Title</label
+                      ><input
+                        type="text"
+                        id="title"
+                        class="form-control"
+                        required=""
+                        value="Newcastle Couples Meet & Greet NSW 1"
+                      /><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if--><!--v-if-->
+                  </div>
+                  <div class="col-lg-3">
+                    <!--v-if--><!--v-if--><!--v-if-->
+                    <div class="mb-3">
+                      <label
+                        for="priority"
+                        class="block mb-2 small fw-medium text-gray-900"
+                        >Priority</label
+                      ><select id="priority" required="" class="form-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option></select
+                      ><!--v-if-->
+                    </div>
+                    <!--v-if--><!--v-if--><!--v-if-->
+                  </div>
+                  <div class="col-lg-12">
+                    <span class="fw-medium small">Display Date:</span>
+                    <p>Friday, 15 November 2024 @ 8:30pm</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary">Save Changes</button
+                ><button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
